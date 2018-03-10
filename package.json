@@ -1,14 +1,15 @@
 {
-  "name": "Project forest",
+  "name": "Project_forest",
   "version": "1.0.0",
   "description": "forest",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:lint": "eslint . --cache"
   },
   "devDependencies": {
     "browser-sync": "^2.23.6",
     "del": "^3.0.0",
+    "eslint": "^4.18.2",
     "gulp": "^4.0.0",
     "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.2.2",
