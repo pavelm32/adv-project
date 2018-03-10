@@ -1,22 +1,11 @@
 {
-  "name": "bundle",
+  "name": "Project forest",
   "version": "1.0.0",
-  "description": "bundle",
+  "description": "forest",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pavelm32/bundle.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/pavelm32/bundle/issues"
-  },
-  "homepage": "https://github.com/pavelm32/bundle#readme",
   "devDependencies": {
     "browser-sync": "^2.23.6",
     "del": "^3.0.0",

@@ -9,9 +9,7 @@ const reload = browserSync.reload;
 const sourcemaps = require('gulp-sourcemaps');
 const rename = require('gulp-rename');
 const del = require('del');
-
 const gulpWebpack = require('gulp-webpack');
-const webpackConfig = require('./webpack.config.js');
 
 const buildPath = './public';
 const sourcePath = './src';
@@ -27,7 +25,16 @@ const paths = {
     },
     scripts: {
         src: `${sourcePath}/scripts/**/*.js`,
+        entry: `${sourcePath}/scripts/app.js`,
         dest: `${buildPath}/js/`
+    },
+    images: {
+        src: `${sourcePath}/images/**/*.*`,
+        dest: `${buildPath}/images/`
+    },
+    fonts: {
+        src: `${sourcePath}/fonts/**/*.*`,
+        dest: `${buildPath}/fonts/`
     }
 };
 
@@ -37,7 +44,7 @@ gulp.task('clean', function () {
 
 gulp.task('templates', function () {
     return gulp.src(paths.templates.pages)
-        .pipe(pug({ pretty: true }))
+        .pipe(pug({ pretty: '\t' }))
         .pipe(gulp.dest(paths.templates.dest));
 });
 
@@ -51,15 +58,27 @@ gulp.task('styles', function () {
 });
 
 gulp.task('scripts', function () {
-    return gulp.src('src/scripts/app.js')
-        .pipe(gulpWebpack(webpackConfig, webpack))
+    return gulp.src(paths.scripts.entry)
+        .pipe(gulpWebpack(require('./webpack.config'), webpack))
         .pipe(gulp.dest(paths.scripts.dest));
+});
+
+gulp.task('images', function () {
+    return gulp.src(paths.images.src)
+        .pipe(gulp.dest(paths.images.dest));
+});
+
+gulp.task('fonts', function () {
+    return gulp.src(paths.fonts.src)
+        .pipe(gulp.dest(paths.fonts.dest));
 });
 
 gulp.task('watch', function () {
     gulp.watch(paths.styles.src, gulp.series('styles'));
     gulp.watch(paths.templates.src, gulp.series('templates'));
     gulp.watch(paths.scripts.src, gulp.series('scripts'));
+    gulp.watch(paths.images.src, gulp.series('images'));
+    gulp.watch(paths.fonts.src, gulp.series('fonts'));
 });
 
 gulp.task('server', function() {
@@ -71,6 +90,6 @@ gulp.task('server', function() {
 
 gulp.task('default', gulp.series(
     "clean",
-    gulp.parallel("styles", "scripts", "templates"),
+    gulp.parallel("styles", "scripts", "templates", "images", "fonts"),
     gulp.parallel("watch", "server")
 ));
