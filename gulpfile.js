@@ -8,8 +8,12 @@ const reload = browserSync.reload;
 
 const sourcemaps = require('gulp-sourcemaps');
 const rename = require('gulp-rename');
-const del = require('del');
 const gulpWebpack = require('gulp-webpack');
+const moduleImporter = require("sass-module-importer");
+const plumber = require('gulp-plumber');
+const autoprefixer = require('gulp-autoprefixer');
+
+const del = require('del');
 
 const buildPath = './public';
 const sourcePath = './src';
@@ -50,8 +54,15 @@ gulp.task('templates', function () {
 
 gulp.task('styles', function () {
     return gulp.src(paths.styles.src)
+        .pipe(plumber())
         .pipe(sourcemaps.init())
-        .pipe(sass({outputStyle: 'compressed'}))
+        .pipe(sass({outputStyle: 'compressed', importer: moduleImporter()}))
+        .pipe(
+            autoprefixer({
+                browsers: ["last 2 versions"],
+                cascade: false
+            })
+        )
         .pipe(sourcemaps.write())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.styles.dest));
@@ -59,6 +70,7 @@ gulp.task('styles', function () {
 
 gulp.task('scripts', function () {
     return gulp.src(paths.scripts.entry)
+        .pipe(plumber())
         .pipe(gulpWebpack(require('./webpack.config'), webpack))
         .pipe(gulp.dest(paths.scripts.dest));
 });
