@@ -1,20 +1,11 @@
 const gulp = require('gulp');
-//const pug = require('gulp-pug');
-//const sass = require('gulp-sass');
 const webpack = require('webpack');
 
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
 
 const $gp = require("gulp-load-plugins")();
-
-//const sourcemaps = require('gulp-sourcemaps');
-//const rename = require('gulp-rename');
-//const gulpWebpack = require('gulp-webpack');
 const moduleImporter = require("sass-module-importer");
-//const plumber = require('gulp-plumber');
-//const autoprefixer = require('gulp-autoprefixer');
-
 const del = require('del');
 
 const buildPath = './public';
