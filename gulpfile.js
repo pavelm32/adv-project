@@ -1,17 +1,19 @@
 const gulp = require('gulp');
-const pug = require('gulp-pug');
-const sass = require('gulp-sass');
+//const pug = require('gulp-pug');
+//const sass = require('gulp-sass');
 const webpack = require('webpack');
 
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
 
-const sourcemaps = require('gulp-sourcemaps');
-const rename = require('gulp-rename');
-const gulpWebpack = require('gulp-webpack');
+const $gp = require("gulp-load-plugins")();
+
+//const sourcemaps = require('gulp-sourcemaps');
+//const rename = require('gulp-rename');
+//const gulpWebpack = require('gulp-webpack');
 const moduleImporter = require("sass-module-importer");
-const plumber = require('gulp-plumber');
-const autoprefixer = require('gulp-autoprefixer');
+//const plumber = require('gulp-plumber');
+//const autoprefixer = require('gulp-autoprefixer');
 
 const del = require('del');
 
@@ -34,6 +36,9 @@ const paths = {
     },
     images: {
         src: `${sourcePath}/images/**/*.*`,
+        exld: `!${sourcePath}/images/icons/*.*`,
+        svgsrc: `${sourcePath}/images/icons/*.svg`,
+        svgdest: `${buildPath}/images/icons/`,
         dest: `${buildPath}/images/`
     },
     fonts: {
@@ -48,35 +53,84 @@ gulp.task('clean', function () {
 
 gulp.task('templates', function () {
     return gulp.src(paths.templates.pages)
-        .pipe(pug({ pretty: '\t' }))
+        .pipe($gp.pug({ pretty: '\t' }))
         .pipe(gulp.dest(paths.templates.dest));
 });
 
 gulp.task('styles', function () {
     return gulp.src(paths.styles.src)
-        .pipe(plumber())
-        .pipe(sourcemaps.init())
-        .pipe(sass({outputStyle: 'compressed', importer: moduleImporter()}))
+        .pipe($gp.plumber())
+        .pipe($gp.sourcemaps.init())
+        .pipe($gp.sass({outputStyle: 'compressed', importer: moduleImporter()}))
         .pipe(
-            autoprefixer({
+            $gp.autoprefixer({
                 browsers: ["last 2 versions"],
                 cascade: false
             })
         )
-        .pipe(sourcemaps.write())
-        .pipe(rename({suffix: '.min'}))
+        .pipe($gp.sourcemaps.write())
+        .pipe($gp.rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.styles.dest));
 });
 
 gulp.task('scripts', function () {
     return gulp.src(paths.scripts.entry)
-        .pipe(plumber())
-        .pipe(gulpWebpack(require('./webpack.config'), webpack))
+        .pipe($gp.plumber())
+        .pipe($gp.webpack(require('./webpack.config'), webpack))
         .pipe(gulp.dest(paths.scripts.dest));
 });
 
+// спрайт иконок + инлайн svg
+gulp.task("svg", done => {
+    const prettySvgs = () => {
+        return gulp
+            .src(paths.images.svgsrc)
+            .pipe(
+                $gp.svgmin({
+                    js2svg: {
+                        pretty: true
+                    }
+                })
+            )
+            .pipe(
+                $gp.cheerio({
+                    run($) {
+                        $("[fill], [stroke], [style], [width], [height]")
+                            .removeAttr("fill")
+                            .removeAttr("stroke")
+                            .removeAttr("style")
+                            .removeAttr("width")
+                            .removeAttr("height");
+                    },
+                    parserOptions: { xmlMode: true }
+                })
+            )
+            .pipe($gp.replace("&gt;", ">"));
+    };
+
+    prettySvgs()
+        .pipe(
+            $gp.svgSprite({
+                mode: {
+                    symbol: {
+                        sprite: "../sprite.svg"
+                    }
+                }
+            })
+        )
+        .pipe(gulp.dest(paths.images.svgdest));
+
+    prettySvgs().pipe(
+        $gp.sassInlineSvg({
+            destDir: paths.images.svgsrc
+        })
+    );
+
+    done();
+});
+
 gulp.task('images', function () {
-    return gulp.src(paths.images.src)
+    return gulp.src([paths.images.src, paths.images.exld])
         .pipe(gulp.dest(paths.images.dest));
 });
 
