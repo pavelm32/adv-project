@@ -12,4 +12,10 @@ html
         link(rel='stylesheet' href='./css/main.min.css')
         script(src='./js/bundle.js' defer)
     body
-        block content
+        div(class=`wrapper wrapper_page_${page}`)
+
+            block header
+
+            block content
+
+            block footer
