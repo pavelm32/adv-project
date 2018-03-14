@@ -2,11 +2,11 @@ extends ../template
 
 block variables
     - var title = 'Добро пожаловать'
-    - var page = 'wellcome'
+    - var page = 'welcome'
 
 block content
 
-    main.maincontent
+    main.section.maincontent
         form.form.maincontent__form
             .form__fields
                 .form__row
@@ -32,3 +32,5 @@ block content
             .form__buttons
                 button.btn На главную
                 button.btn Войти
+
+    footer.section.footer
