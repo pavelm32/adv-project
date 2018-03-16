@@ -74,10 +74,10 @@ block content
                     li.reviews-block__item
                         .reviews-block__avatar
                             img(class="reviews-block__image" src=`${item.pic}`)
-                        blockquote.reviews-block__review #{item.text}
-                        .reviews-block__name
-                            p #{item.name}
-                            p #{item.sign}
+                        blockquote.quote.reviews-block__quote
+                            p #{item.text}
+                            p.quote__name #{item.name}
+                            p.quote__sign - #{item.sign}
 
         form.form.reviews__form
             h2.form__title.subtitle Связаться со мной

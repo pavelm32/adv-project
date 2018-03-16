@@ -1,6 +1,9 @@
 extends ../template
 
 block variables
+    include ../common/_varibles
+    include ../common/_mixins
+
     -
         var settings = {
             page: 'about',
@@ -8,5 +11,133 @@ block variables
             subtitle: '',
             show_user_info: true
         }
+
+    -
+        var contacts = [
+            {
+                icon: 'skupe',
+                value: 'skype_kdn'
+            },
+            {
+                icon: 'mail',
+                value: 'astahov@gmail.com'
+            },
+            {
+                icon: 'phone',
+                value: '+7 931 200 93 24'
+            },
+            {
+                icon: 'adres',
+                value: 'Новосибирск, ул. Инская, д.14'
+            }
+        ];
+
+    -
+        var skills = [
+            {
+                name: 'Frontend',
+                items: [
+                    {
+                        name: 'HTML5',
+                        percent: 90
+                    },
+                    {
+                        name: 'CSS3',
+                        percent: 80
+                    },
+                    {
+                        name: 'JavaScript& jQuery',
+                        percent: 80
+                    }
+
+                ]
+            },
+            {
+                name: 'Backend',
+                items: [
+                    {
+                        name: 'PHP',
+                        percent: 45
+                    },
+                    {
+                        name: 'mySQL',
+                        percent: 55
+                    },
+                    {
+                        name: 'Node.js& npm',
+                        percent: 40
+                    },
+                    {
+                        name: 'Mongo.db',
+                        percent: 60
+                    }
+                ]
+            },
+            {
+                name: 'WorkFlow',
+                items: [
+                    {
+                        name: 'Git',
+                        percent: 80
+                    },
+                    {
+                        name: 'Gulp',
+                        percent: 75
+                    },
+                    {
+                        name: 'Bower',
+                        percent: 60
+                    }
+                ]
+            }
+        ];
 block content
-    h1 Обо мне
+    include ../common/_header
+
+    section.maincontent.section
+        .maincontent__left
+            .triangle.triangle_color_beige.maincontent__left
+            .maincontent__column
+                .block-title.maincontent__title
+                    .block-title__text
+                        h1.section-title #{settings.title}
+            .maincontent__column
+                .maincontent__user-info
+                    .maincontent__photo
+                        img.maincontent__image(src="#")
+                    .maincontent__description
+                        h2.maincontent__user-info-title.subtitle Кто я
+                        .maincontent__user-preview-text
+                            p
+                                | Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений.
+                                | Мне нравится делать интересные и современные проекты.
+                            p
+                                | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент.
+                                | А пока посмотрите,как тут всё классно и красиво!
+
+        .maincontent__right
+            .triangle.triangle_color_white.maincontent__right
+            h2.maincontent__skills-title.subtitle Чем я могу быть вам полезен
+            p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачина Backend. Но давайте по порядку.
+
+            .skills.maincontent__skills
+                ul.skills__list
+                    each skill in skills
+                        li.skills__item
+                            .skills__name #{skill.name}
+                            ul.skills__tech-list
+                                each tech in skill.items
+                                    li.skills__tech-item
+                                        svg.skills__tech-shape
+                                        svg.skills__tech-shape
+                                        .skills__tech-name #{tech.name}
+
+    section.contacts.section
+        .maps.contacts__maps
+        .contacts__info
+            h2.contacts__title.subtitle Контакты
+            ul.contacts__list
+                each item in contacts
+                    li(class=`contacts__item contacts__item_icon_${item.icon}`) #{item.value}
+
+    include ../common/_footer
