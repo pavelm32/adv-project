@@ -1,8 +1,13 @@
 extends ../template
 
 block variables
-    - var title = 'Добро пожаловать'
-    - var page = 'login'
+    -
+        var settings = {
+            page: 'login',
+            title: 'Добро пожаловать',
+            subtitle: '',
+            show_user_info: false
+        }
 
 block content
 

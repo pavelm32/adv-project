@@ -1,0 +1,26 @@
+header(class=`header section header_${settings.page}`)
+    .header__row
+        .socials.header__socials
+            +socials(socials)
+
+        .hamburger.header__menu
+        nav.menu.menu_fixed
+            +menu(settings.title, menu)
+
+    .header__row
+        if settings.show_user_info
+            .user.header__user
+                .user__avatar
+                    img.user__image(src="#")
+                .user__info
+                    .user__name
+                    .user__description
+        else
+            .block-title.header__title
+                .block-title__avatar
+                    img.block-title__image(src="#")
+                .block-title__text
+                    h1.section-title #{settings.title}
+                .block-title__subtext
+                    p #{settings.subtitle}
+    .scroll-arrow.header__arrow

@@ -12,8 +12,8 @@
 	</head>
 	<body>
 		<div class="wrapper wrapper_page_works">
-			<header class="header section">
-				<div class="header__top">
+			<header class="header section header_works">
+				<div class="header__row">
 					<div class="socials header__socials">
 						<ul class="socials__list">
 							<li class="socials__item"><a class="socials__link socials__link_vk" href="#"></a></li>
@@ -21,17 +21,17 @@
 							<li class="socials__item"><a class="socials__link socials__link_in" href="#"></a></li>
 						</ul>
 					</div>
-					<div class="hamburger header__menu">
-						<nav class="menu menu_fixed"></nav>
+					<div class="hamburger header__menu"></div>
+					<nav class="menu menu_fixed">
 						<ul class="menu__list">
-							<li class="menu__item"><a class="menu__link menu__link_active" href="#">Мои работы</a></li>
-							<li class="menu__item"><a class="menu__link" href="#">Блог</a></li>
-							<li class="menu__item"><a class="menu__link" href="#">Обо мне</a></li>
-							<li class="menu__item"><a class="menu__link" href="#">Авторизация</a></li>
+							<li class="menu__item"><a class="menu__link menu__link_active" href="/works.html">Мои работы</a></li>
+							<li class="menu__item"><a class="menu__link" href="/blog.html">Блог</a></li>
+							<li class="menu__item"><a class="menu__link" href="/about.html">Обо мне</a></li>
+							<li class="menu__item"><a class="menu__link" href="/login.html">Авторизация</a></li>
 						</ul>
-					</div>
+					</nav>
 				</div>
-				<div class="header__title">
+				<div class="header__row">
 					<div class="user header__user">
 						<div class="user__avatar"><img class="user__image" src="#"></div>
 						<div class="user__info">
@@ -91,9 +91,7 @@
 					<ul class="reviews-block__list">
 						<li class="reviews-block__item">
 							<div class="reviews-block__avatar"><img class="reviews-block__image" src="#"></div>
-							<blockquote class="reviews-block__review">
-								<Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!></Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!>
-							</blockquote>
+							<blockquote class="reviews-block__review">Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</blockquote>
 							<div class="reviews-block__name">
 								<p>Ковальчук Дмитрий</p>
 								<p>основатель Loftschool</p>
@@ -101,9 +99,7 @@
 						</li>
 						<li class="reviews-block__item">
 							<div class="reviews-block__avatar"><img class="reviews-block__image" src="#"></div>
-							<blockquote class="reviews-block__review">
-								<Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!></Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!>
-							</blockquote>
+							<blockquote class="reviews-block__review">Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!</blockquote>
 							<div class="reviews-block__name">
 								<p>Сабанцев Владимир</p>
 								<p>преподаватель</p>
@@ -111,8 +107,61 @@
 						</li>
 					</ul>
 				</div>
+				<form class="form reviews__form">
+					<h2 class="form__title subtitle">Связаться со мной</h2>
+					<div class="form__fields">
+						<div class="form__row">
+							<label class="form__fieldset">
+								<input class="form__input" type="text" name="name" id="uname" placeholder="Имя">
+							</label>
+						</div>
+						<div class="form__row">
+							<label class="form__fieldset">
+								<input class="form__input" type="text" name="email" id="umail" placeholder="Email">
+							</label>
+						</div>
+						<div class="form__row">
+							<label class="form__fieldset">
+								<textarea class="form__textarea" name="comment" id="comment" placeholder="Ваше сообщение"></textarea>
+							</label>
+						</div>
+					</div>
+					<div class="form__buttons">
+						<button class="btn">На главную</button>
+						<button class="btn">Войти</button>
+					</div>
+				</form>
 			</section>
-			<footer class="footer section"></footer>
+			<footer class="footer section">
+				<div class="footer__row">
+					<div class="footer__column">
+						<p>Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.</p>
+					</div>
+					<div class="footer__column">
+						<nav class="menu footer__menu">
+							<ul class="menu__list">
+								<li class="menu__item"><a class="menu__link menu__link_active" href="/works.html">Мои работы</a></li>
+								<li class="menu__item"><a class="menu__link" href="/blog.html">Блог</a></li>
+								<li class="menu__item"><a class="menu__link" href="/about.html">Обо мне</a></li>
+								<li class="menu__item"><a class="menu__link" href="/login.html">Авторизация</a></li>
+							</ul>
+						</nav>
+						<div class="socials footer__socials">
+							<ul class="socials__list">
+								<li class="socials__item"><a class="socials__link socials__link_vk" href="#"></a></li>
+								<li class="socials__item"><a class="socials__link socials__link_git" href="#"></a></li>
+								<li class="socials__item"><a class="socials__link socials__link_in" href="#"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="footer__column"></div>
+				</div>
+				<div class="footer__row">
+					<div class="copyright footer__copyright">
+						<p>© Владимир Астахов | Создано с любовью в LoftSchool | 2016</p>
+					</div>
+				</div>
+			</footer>
 		</div>
 	</body>
 </html>

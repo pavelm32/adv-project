@@ -1,7 +1,12 @@
 extends ../template
 
 block variables
-    - var title = 'Обо мне'
-
+    -
+        var settings = {
+            page: 'about',
+            title: 'Обо мне',
+            subtitle: '',
+            show_user_info: true
+        }
 block content
     h1 Обо мне

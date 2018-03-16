@@ -1,0 +1,11 @@
+mixin menu(current,items)
+    ul.menu__list
+        each item in items
+            li.menu__item
+                a(href=`${item.link}` class=`menu__link${current == item.name ? ' menu__link_active' : ''}`) #{item.name}
+
+mixin socials(items)
+    ul.socials__list
+        each item in items
+            li.socials__item
+                a(href="#" class=`socials__link socials__link_${item}`)

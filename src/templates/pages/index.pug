@@ -1,9 +1,13 @@
 extends ../template
 
 block variables
-    - var title = 'Добро пожаловать'
-    - var page = 'welcome'
-
+    -
+        var settings = {
+            page: 'welcome',
+            title: 'Добро пожаловать',
+            subtitle: '',
+            show_user_info: true
+        }
 block content
 
     main.section.maincontent

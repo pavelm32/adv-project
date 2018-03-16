@@ -1,7 +1,12 @@
 extends ../template
 
 block variables
-    - var title = 'Блог'
-
+    -
+        var settings = {
+            page: 'blog',
+            title: 'Блог',
+            subtitle: 'Статьи, которые я написал',
+            show_user_info: false
+        }
 block content
     h1 Блог

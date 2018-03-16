@@ -1,51 +1,48 @@
 extends ../template
 
 block variables
-    - var title = 'Мои работы'
-    - var page = 'works'
-    - var reviews = [{pic: '#', text: "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!",name: 'Ковальчук Дмитрий',sign: 'основатель Loftschool'},{pic: '#',text: 'Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!',name: 'Сабанцев Владимир',sign: 'преподаватель'}];
+    include ../common/_varibles
+    include ../common/_mixins
+
+    -
+        var settings = {
+            page: 'works',
+            title: 'Мои работы',
+            subtitle: '',
+            show_user_info: true
+        }
+
+    -
+        var reviews = [
+            {
+                pic: '#',
+                text: "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!",
+                name: 'Ковальчук Дмитрий',
+                sign: 'основатель Loftschool'
+            },
+            {
+                pic: '#',
+                text: 'Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!',
+                name: 'Сабанцев Владимир',
+                sign: 'преподаватель'
+            }
+        ];
+
 
 block content
 
-    header.header.section
-        .header__top
-            .socials.header__socials
-                ul.socials__list
-                    each item in ['vk', 'git', 'in']
-                        li.socials__item
-                            a(href="#" class=`socials__link socials__link_${item}`)
-
-            .hamburger.header__menu
-                nav.menu.menu_fixed
-                ul.menu__list
-                    each item in ['Мои работы', 'Блог', 'Обо мне', 'Авторизация']
-                        li.menu__item
-                            a(href="#" class=`menu__link${title == item ? ' menu__link_active' : ''}`) #{item}
-        .header__title
-            //- .section-title
-                .section-title__pic
-                    img.section-title__image(src="#")
-            .user.header__user
-                .user__avatar
-                    img.user__image(src="#")
-                .user__info
-                    .user__name
-                    .user__description
-
-        .scroll-arrow.header__arrow
-
+    include ../common/_header
 
     section.maincontent.section
         .maincontent__left
             .triangle.triangle_color_white.maincontent__left
-
 
         .maincontent__right
             .triangle.triangle_color_white.maincontent__right
 
         .block-title.maincontent__title
             .block-title__text
-                h1.section-title #{title}
+                h1.section-title #{settings.title}
         .slider.maincontent__slider
             .slider__column.slider__column_left
                 .slider__project-info
@@ -70,16 +67,34 @@ block content
     section.reviews.section
         .block-title.reviews__title
             .block-title__text
-                h1.section-title #{title}
+                h1.section-title #{settings.title}
         .reviews-block
             ul.reviews-block__list
                 each item in reviews
                     li.reviews-block__item
                         .reviews-block__avatar
                             img(class="reviews-block__image" src=`${item.pic}`)
-                        blockquote.reviews-block__review
-                            #{item.text}
+                        blockquote.reviews-block__review #{item.text}
                         .reviews-block__name
                             p #{item.name}
                             p #{item.sign}
-    footer.footer.section
+
+        form.form.reviews__form
+            h2.form__title.subtitle Связаться со мной
+
+            .form__fields
+                .form__row
+                    label.form__fieldset
+                        input.form__input(type="text" name="name" id="uname" placeholder="Имя")
+                .form__row
+                    label.form__fieldset
+                        input.form__input(type="text" name="email" id="umail" placeholder="Email")
+                .form__row
+                    label.form__fieldset
+                        textarea.form__textarea(name="comment" id="comment" placeholder="Ваше сообщение")
+
+            .form__buttons
+                button.btn На главную
+                button.btn Войти
+
+    include ../common/_footer
