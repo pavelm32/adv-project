@@ -4,15 +4,17 @@ block variables
     -
         var settings = {
             page: 'login',
-            title: 'Добро пожаловать',
+            title: 'Авторизация',
             subtitle: '',
             show_user_info: false
         }
 
 block content
 
-    main.section.maincontent
-        form.form.maincontent__form
+    section.section.login
+        h2.form__title.subtitle Авторизуйтесь
+
+        form.form.login__form
             .form__fields
                 .form__row
                     label.form__fieldset
@@ -39,3 +41,6 @@ block content
                 button.btn Войти
 
     footer.section.footer
+        .footer__row
+            .copyright.footer__copyright
+                include ../common/_copyright

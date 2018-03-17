@@ -94,20 +94,20 @@ block variables
 block content
     include ../common/_header
 
-    section.maincontent.section
-        .maincontent__left
-            .triangle.triangle_color_beige.maincontent__left
-            .maincontent__column
-                .block-title.maincontent__title
+    section.about.section
+        .about__left
+            .triangle.triangle_color_beige
+            .about__column
+                .block-title.about__title
                     .block-title__text
                         h1.section-title #{settings.title}
-            .maincontent__column
-                .maincontent__user-info
-                    .maincontent__photo
-                        img.maincontent__image(src="#")
-                    .maincontent__description
-                        h2.maincontent__user-info-title.subtitle Кто я
-                        .maincontent__user-preview-text
+            .about__column
+                .about__user-info
+                    .about__photo
+                        img.about__image(src="#")
+                    .about__description
+                        h2.about__user-info-title.subtitle Кто я
+                        .about__user-preview-text
                             p
                                 | Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений.
                                 | Мне нравится делать интересные и современные проекты.
@@ -115,12 +115,12 @@ block content
                                 | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент.
                                 | А пока посмотрите,как тут всё классно и красиво!
 
-        .maincontent__right
-            .triangle.triangle_color_white.maincontent__right
-            h2.maincontent__skills-title.subtitle Чем я могу быть вам полезен
+        .about__right
+            .triangle.triangle_color_white
+            h2.about__skills-title.subtitle Чем я могу быть вам полезен
             p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачина Backend. Но давайте по порядку.
 
-            .skills.maincontent__skills
+            .skills.about__skills
                 ul.skills__list
                     each skill in skills
                         li.skills__item

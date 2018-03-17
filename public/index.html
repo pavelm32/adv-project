@@ -12,48 +12,35 @@
 	</head>
 	<body>
 		<div class="wrapper wrapper_page_welcome">
-			<main class="section maincontent">
-				<form class="form maincontent__form">
-					<div class="form__fields">
-						<div class="form__row">
-							<label class="form__fieldset">
-								<input class="form__input" type="text" name="login" id="ulogin" placeholder="Логин">
-							</label>
-						</div>
-						<div class="form__row">
-							<label class="form__fieldset">
-								<input class="form__input" type="password" name="password" id="upassword" placeholder="Пароль">
-							</label>
-						</div>
-						<div class="form__row">
-							<label class="form__fieldset">
-								<input class="form__input" type="checkbox" name="is_human" id="is_human" value="1">
-								<div class="form__label">Я человек</div>
-							</label>
-						</div>
-						<div class="form__row">
-							<div class="form__group-fields">
-								<div class="form__label">Вы точно не робот?</div>
-							</div>
-							<div class="form__group-fields">
-								<label class="form__fieldset">
-									<input class="form__input" type="radio" name="is_human_sure" id="is_human_sure_yes" value="1">
-									<div class="form__label">Да</div>
-								</label>
-								<label class="form__fieldset">
-									<input class="form__input" type="radio" name="is_human_sure" id="is_human_sure_not" value="0" checked="checked">
-									<div class="form__label">Не уверен</div>
-								</label>
-							</div>
+			<header class="header section header_welcome">
+				<div class="header__row"><a class="btn btn_view_round btn_fill_transparent" href="/login.html">Авторизоваться</a></div>
+			</header>
+			<section class="section welcome">
+				<div class="welcome__user-info">
+					<div class="user welcome__user">
+						<div class="user__avatar"><img class="user__image" src="#"></div>
+						<div class="user__info">
+							<div class="user__name"></div>
+							<div class="user__description"></div>
 						</div>
 					</div>
-					<div class="form__buttons">
-						<button class="btn">На главную</button>
-						<button class="btn">Войти</button>
+					<div class="socials welcome__socials">
+						<ul class="socials__list">
+							<li class="socials__item"><a class="socials__link socials__link_vk" href="#"></a></li>
+							<li class="socials__item"><a class="socials__link socials__link_git" href="#"></a></li>
+							<li class="socials__item"><a class="socials__link socials__link_in" href="#"></a></li>
+						</ul>
 					</div>
-				</form>
-			</main>
-			<footer class="section footer"></footer>
+					<div class="welcome__buttons"><a class="btn" href="/works.html">Мои работы</a><a class="btn" href="/about.html">Обо мне</a><a class="btn" href="/blog.html">Блог</a></div>
+				</div>
+			</section>
+			<footer class="section footer">
+				<div class="footer__row">
+					<div class="copyright footer__copyright">
+						<p>© Владимир Астахов | Создано с любовью в LoftSchool | 2016</p>
+					</div>
+				</div>
+			</footer>
 		</div>
 	</body>
 </html>
