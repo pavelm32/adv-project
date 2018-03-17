@@ -1,10 +1,10 @@
 .socials {
-    display: flex;
+
 }
 
 .header__socials {
 
-    .socials__link {
+    .socials__shape {
         fill: $white;
 
         &:hover {
@@ -14,23 +14,45 @@
 
 }
 
-.socials__link {
+.footer__socials {
+
+    .socials__shape {
+        opacity: .5;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+}
+
+.socials__list {
+    display: flex;
+}
+
+.socials__item {
+    margin-right: 28px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.socials__shape {
     display: block;
+    fill: $white;
 
     &_vk{
-        background-image: url('../../images/sprite.svg#vk');
         width: 32px;
-        height: 20px;
+        height: 22px;
     }
 
     &_github{
-        background-image: url('../../images/sprite.svg#github');
         width: 28px;
         height: 22px;
     }
 
     &_in{
-        background-image: url('../../images/sprite.svg#in');
         width: 24px;
         height: 22px;
     }

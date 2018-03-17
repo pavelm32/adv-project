@@ -1,6 +1,6 @@
 // ext libs
 @import "normalize.css";
-@import "font-awesome/font-awesome";
+//@import "font-awesome/font-awesome";
 
 // libs
 @import "libs/vars";
@@ -10,10 +10,14 @@
 @import "layout/fonts";
 @import "layout/base";
 @import 'layout/header';
+@import 'layout/footer';
 
 // component
 @import 'components/menu';
 @import 'components/socials';
+@import 'components/user';
+@import 'components/scroll-arrows';
+@import 'components/quote';
 
 
 // pages

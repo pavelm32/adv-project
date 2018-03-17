@@ -1,26 +1,32 @@
 header(class=`header section header_${settings.page}`)
-    .header__row
-        .socials.header__socials
-            +socials(socials)
+    .container
+        .header__top
+            .socials.header__socials
+                +socials(socials)
 
-        .hamburger.header__menu
-        nav.menu.menu_fixed
-            +menu(settings.title, menu)
+            .hamburger.header__menu
+                svg.hamburger__shape
+                    use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./images/sprite.svg#hamburger")
 
-    .header__row
-        if settings.show_user_info
-            .user.header__user
-                .user__avatar
-                    img.user__image(src="#")
-                .user__info
-                    .user__name
-                    .user__description
-        else
-            .block-title.header__title
-                .block-title__avatar
-                    img.block-title__image(src="#")
-                .block-title__text
-                    h1.section-title #{settings.title}
-                .block-title__subtext
-                    p #{settings.subtitle}
-    .scroll-arrow.header__arrow
+            nav.menu.menu_fixed
+                +menu(settings.title, menu)
+
+        .header__bottom
+            if settings.show_user_info
+                .user.header__user
+                    .user__avatar
+                        img.user__image(src="./images/content/avatar-title.jpg")
+                    .user__info
+                        .user__name Владимир Астахов
+                        .user__description Личный сайт веб разработчика
+            else
+                .block-title.header__title
+                    .block-title__avatar
+                        img.block-title__image(src="#")
+                    .block-title__text
+                        h1.section-title #{settings.title}
+                    .block-title__subtext
+                        p #{settings.subtitle}
+        .scroll-arrow.header__arrow
+            svg.scroll-arrow__shape
+                use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./images/sprite.svg#arrow_down")

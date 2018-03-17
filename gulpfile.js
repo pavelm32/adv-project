@@ -121,7 +121,7 @@ gulp.task("svg", done => {
 });
 
 gulp.task('images', function () {
-    return gulp.src([paths.images.src, paths.images.exld])
+    return gulp.src([paths.images.src/*, paths.images.exld*/])
         .pipe(gulp.dest(paths.images.dest));
 });
 

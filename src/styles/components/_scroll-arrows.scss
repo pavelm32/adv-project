@@ -1,0 +1,14 @@
+.scroll-arrow {
+
+}
+
+.scroll-arrow__shape {
+    width: 26px;
+    height: 16px;
+    fill:#bfcfc8;
+    cursor: pointer;
+
+    &:hover {
+        fill: $white;
+    }
+}

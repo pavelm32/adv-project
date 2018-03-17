@@ -1,0 +1,24 @@
+.user {
+    text-align: center;
+}
+
+.user__avatar {
+    width: 141px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user__image {
+    display: block;
+    max-width: 100%;
+}
+
+.user__info {
+    color: $white;
+}
+
+.user__name {
+    font-size: 35px;
+    @include roboto(medium);
+}
