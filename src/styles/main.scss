@@ -1,9 +1,20 @@
+// ext libs
 @import "normalize.css";
-
 @import "font-awesome/font-awesome";
-@import "layout/fonts";
 
+// libs
+@import "libs/vars";
+@import "libs/mixins";
+
+// layout
+@import "layout/fonts";
+@import "layout/base";
 @import 'layout/header';
 
+// component
+@import 'components/menu';
+@import 'components/socials';
 
-@import 'block/list';
+
+// pages
+@import "pages/about";

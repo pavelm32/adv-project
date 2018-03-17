@@ -1,0 +1,15 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 600px;
+
+    &_about {
+        background: url('../../images/bg/about-bg.jpg') no-repeat;
+        background-size: cover;
+    }
+}
+
+.header__row {
+    display: flex;
+}

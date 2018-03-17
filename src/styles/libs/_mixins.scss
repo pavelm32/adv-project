@@ -1,0 +1,61 @@
+//responsive
+@function rem($px) {
+  @return $px / 16px + 0rem;
+}
+
+@mixin bigscreen {
+  @media screen and (min-width: $big-screen) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (max-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin tablets {
+  @media screen and (max-width: $tablets) {
+    @content;
+  }
+}
+
+@mixin phones {
+  @media screen and (max-width: $phones) {
+    @content;
+  }
+}
+
+@mixin roboto($style: normal, $type: normal) {
+  font-family: 'Roboto', Helvetica, sans-serif;
+
+  @if $style == normal {
+    font-weight: 400;
+  }
+
+  @if $style == light {
+    font-weight: 300;
+    @if $type == italic {
+      font-style: $type;
+    }
+  }
+
+  @if $style == medium {
+    font-weight: 500;
+    @if $type == italic {
+      font-style: $type;
+    }
+  }
+
+  @if $style == bold {
+    font-weight: 700;
+    @if $type == italic {
+      font-style: $type;
+    }
+  }
+}
+
+@mixin sansus() {
+  font-family: "Sansus Webissimo", Helvetica, sans-serif;
+}

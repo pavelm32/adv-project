@@ -1,0 +1,37 @@
+.socials {
+    display: flex;
+}
+
+.header__socials {
+
+    .socials__link {
+        fill: $white;
+
+        &:hover {
+            fill:$green_l;
+        }
+    }
+
+}
+
+.socials__link {
+    display: block;
+
+    &_vk{
+        background-image: url('../../images/sprite.svg#vk');
+        width: 32px;
+        height: 20px;
+    }
+
+    &_github{
+        background-image: url('../../images/sprite.svg#github');
+        width: 28px;
+        height: 22px;
+    }
+
+    &_in{
+        background-image: url('../../images/sprite.svg#in');
+        width: 24px;
+        height: 22px;
+    }
+}
