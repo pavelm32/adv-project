@@ -1,5 +1,6 @@
 .header {
     min-height: 600px;
+    flex-direction: column;
 
     &_about {
         background: url('../images/bg/about-bg.jpg') no-repeat;
@@ -9,6 +10,7 @@
 
 .header__top, .header__bottom {
     display: flex;
+    padding: 0 30px;
 }
 
 .header__socials {

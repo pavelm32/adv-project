@@ -1,0 +1,35 @@
+.section-title {
+    font-size: 63px;
+    @include sansus();
+    text-align: center;
+    color:$dark;
+    margin: 70px 0;
+    text-transform: uppercase;
+
+    &:after {
+        content: '';
+        display: block;
+        height: 3px;
+        background-color: $dark;
+        width: 90px;
+        margin: 10px auto 0;
+    }
+}
+
+.subtitle {
+    margin-bottom: 40px;
+    font-size: 35px;
+    @include sansus();
+    text-align: center;
+    color:$gray;
+    text-transform: uppercase;
+
+    &:after {
+        content: '';
+        display: block;
+        height: 3px;
+        background-color: $gray;
+        width: 90px;
+        margin: 10px auto 0;
+    }
+}

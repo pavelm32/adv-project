@@ -13,8 +13,28 @@
     }
 }
 
-.menu {
-    &_fixed {
-        display: none;
+.menu-fixed {
+    display: none;
+}
+
+.menu__list {
+    display: flex;
+}
+
+.menu__item {
+    margin-right: 40px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.menu__link {
+    text-decoration: none;
+    color:$white;
+    @include roboto(bold);
+
+    &:hover {
+        text-decoration: underline;
     }
 }

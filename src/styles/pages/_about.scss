@@ -1,0 +1,191 @@
+.about {
+
+}
+
+.about__left, .about__right {
+    display: flex;
+    align-items: flex-start;
+    flex:1;
+    padding: 20px;
+}
+
+.about__right {
+    flex-direction: column;
+}
+
+.about__left {
+    background-color: $beige;
+}
+
+.about__right {
+    background-color: #f4f5f0;
+}
+
+.triangle {
+    display: none;
+    margin-top: -160px;
+}
+
+.triangle__shape {
+    &_color_white {
+        fill: $white;
+    }
+
+    &_color_beige {
+        fill: $beige;
+    }
+}
+
+.about__column {
+    flex:1;
+    margin-right: 10px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.block-title__text {
+    background: url('../images/content/about-header.png') 0 bottom no-repeat;
+}
+
+.about__title {
+    .section-title {
+        margin-top: 0;
+    }
+}
+
+.about__user-info {
+
+}
+
+.about__photo {
+    margin-bottom: 40px;
+}
+
+.about__skills-title{
+    width: 50%;
+    margin: 0 auto 40px;
+}
+
+.skills__list {
+
+}
+
+.skills__item {
+    margin-bottom: 20px;
+}
+
+.skills__name {
+    color: $gray;
+    @include roboto(medium);
+    font-size:28px;
+}
+
+.skills__tech-list {
+
+}
+
+.skills__tech-item {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    position: relative;
+}
+
+.circles {
+    fill: none;
+    stroke-width: 15;
+}
+.circles__shape {
+    &_first{
+        stroke: #dfdcd5;
+    }
+
+    &_second{
+        stroke: $green_d;
+      //  stroke-dasharray: .0010 282.6;
+        transition: all 1s;
+        stroke-dasharray: 28.26 282.6;
+    }
+}
+
+.skills__tech-name-wrap{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom:0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:$green_d;
+    @include roboto(medium);
+}
+
+.skills__tech-name {
+    flex-basis: 65%;
+    text-align: center;
+}
+
+.contacts {
+    min-height: 1114px;
+    background: url('../images/bg/map-bg.jpg') no-repeat;
+    background-size: cover;
+}
+
+.contacts__info-wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom:0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#455a64;
+    @include roboto(medium);
+
+}
+
+.contacts__info {
+    background-color: #f4f5f0;
+    opacity: .85;
+    padding: 25px;
+    border-radius: 4px;
+}
+
+.contacts__item {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.contacts__shape {
+    fill: $green_l;
+    margin-right: 10px;
+
+    &_skype {
+        width: 27px;
+        height: 27px;
+    }
+
+    &_phone {
+        width: 20px;
+        height: 20px;
+    }
+
+    &_envelope {
+        width: 23px;
+        height: 16px;
+    }
+
+    &_map_marker {
+        width: 17px;
+        height: 21px;
+    }
+}
