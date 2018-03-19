@@ -13,7 +13,7 @@
     background-color: $dark; //rgba($dark, .85);
     //padding-top: 30px;
     //padding-bottom: 50px;
-    padding: 30px $content-offset 50px;
+    padding: 25px $content-offset 37px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -29,7 +29,6 @@
 }
 
 .footer__column {
-
     flex:1;
     position: relative;
 
@@ -75,7 +74,6 @@
     flex-direction: row;
     justify-content: center;
 }
-
 
 .footer__copyright {
     p {

@@ -6,6 +6,11 @@
         background: url('../images/bg/about-bg.jpg') no-repeat;
         background-size: cover;
     }
+
+    &_works {
+        background: url('../images/bg/works-bg.jpg') no-repeat;
+        background-size: cover;
+    }
 }
 
 .header__top, .header__bottom {
@@ -31,9 +36,5 @@
 }
 
 .header__arrow {
-    position: absolute;
-    left:0;
-    right:0;
     bottom: 70px;
-    text-align: center;
 }

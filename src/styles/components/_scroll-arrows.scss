@@ -1,5 +1,11 @@
 .scroll-arrow {
-
+    position: absolute;
+    left:0;
+    right:0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .scroll-arrow__shape {
@@ -7,8 +13,21 @@
     height: 16px;
     fill:#bfcfc8;
     cursor: pointer;
+    z-index: 1;
 
     &:hover {
         fill: $white;
+    }
+
+    &_active {
+        fill: $white;
+    }
+
+    &_shadow {
+        //box-shadow: 2px 0 2px rgba(#000000, 0.16);
+    }
+
+    &_up {
+        transform: rotate(180deg);
     }
 }

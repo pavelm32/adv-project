@@ -15,13 +15,13 @@ block variables
     -
         var reviews = [
             {
-                pic: '#',
+                pic: './images/content/avatar-photo1.jpg',
                 text: "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!",
                 name: 'Ковальчук Дмитрий',
                 sign: 'основатель Loftschool'
             },
             {
-                pic: '#',
+                pic: './images/content/avatar-photo2.jpg',
                 text: 'Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!',
                 name: 'Сабанцев Владимир',
                 sign: 'преподаватель'
@@ -34,40 +34,50 @@ block content
     include ../common/_header
 
     section.works.section
-        .works__left
-            .triangle.triangle_color_white
+        .works__top
+            .works__left
+                svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 900 160" preserveaspectratio="none")
+                    polygon.triangle__shape.triangle__shape_color_beige(points="0,0   0,160   900,160   900,155")
 
-        .works__right
-            .triangle.triangle_color_white
+            .works__right
+                svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 900 160" preserveaspectratio="none")
+                    polygon.triangle__shape.triangle__shape_color_white(points="900,0   900,160   0,160   0,155")
 
         .block-title.works__title
-            .block-title__text
+            .block-title__text.block-title__text_text_works.block-title__text_position_centerbottom
                 h1.section-title #{settings.title}
         .slider.works__slider
-            .slider__column.slider__column_left
-                .slider__project-info
-                    h2.slider__project-name.subtitle Сайт школы онлайн Образования
-                    .slider__stack-tech HTML , CSS, JAVASCRIPT
-                    .a.slider__link.btn.btn_view_round Посмотреть сайт
-            .slider__column.slider__column_right
-                .slider__container
-                    .slider__main-slide
-                        img.slider__image(src="#")
-                    .slider__nav
-                        ul.slider__nav-list
-                            li.slider__nav-item
-                                .slider__nav-preview
-                                    img.slider__nav-image(src="#")
-                                .slider__scroll.scroll-arrow
-                            li.slider__nav-item
-                                .slider__nav-preview
-                                    img.slider__nav-image(src="#")
-                                .slider__scroll.scroll-arrow.scroll-arrow_invert
+
+            .slider__project-info
+                h2.slider__project-name.subtitle Сайт школы онлайн
+                    span.subtitle__new-line Образования
+                .slider__stack-tech HTML , CSS, JAVASCRIPT
+                .a.slider__link.btn.btn_view_round.btn_icon_link
+                    span.btn__value Посмотреть сайт
+
+            .slider__main-slide
+                img.slider__image(src="./images/content/big-slide.png")
+            .slider__nav
+                ul.slider__nav-list
+                    li.slider__nav-item
+                        .slider__nav-preview
+                            img.slider__nav-image(src="./images/content/small-slide1.jpg")
+
+                        .scroll-arrow.slider__scroll
+                            svg.scroll-arrow__shape.scroll-arrow__shape_active.scroll-arrow__shape_shadow
+                                use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./images/sprite.svg#arrow_down")
+                    li.slider__nav-item
+                        .slider__nav-preview
+                            img.slider__nav-image(src="./images/content/small-slide2.jpg")
+
+                        .scroll-arrow.slider__scroll
+                            svg.scroll-arrow__shape.scroll-arrow__shape_up.scroll-arrow__shape_active.scroll-arrow__shape_shadow
+                                use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./images/sprite.svg#arrow_down")
 
     section.reviews.section
         .block-title.reviews__title
-            .block-title__text
-                h1.section-title #{settings.title}
+            .block-title__text.block-title__text_text_about.block-title__text_position_centerbottom
+                h1.section-title Что обо мне говорят
         .reviews-block
             ul.reviews-block__list
                 each item in reviews
@@ -79,22 +89,23 @@ block content
                             p.quote__name #{item.name}
                             p.quote__sign - #{item.sign}
 
-        form.form.reviews__form
-            h2.form__title.subtitle Связаться со мной
+        .reviews__form-wrap
+            form.form.reviews__form
+                h2.form__title.subtitle Связаться со мной
 
-            .form__fields
-                .form__row
-                    label.form__fieldset
-                        input.form__input(type="text" name="name" id="uname" placeholder="Имя")
-                .form__row
-                    label.form__fieldset
-                        input.form__input(type="text" name="email" id="umail" placeholder="Email")
-                .form__row
-                    label.form__fieldset
-                        textarea.form__textarea(name="comment" id="comment" placeholder="Ваше сообщение")
+                .form__fields
+                    .form__row
+                        label.form__fieldset
+                            input.form__input(type="text" name="name" id="uname" placeholder="Имя")
+                    .form__row
+                        label.form__fieldset
+                            input.form__input(type="text" name="email" id="umail" placeholder="Email")
+                    .form__row
+                        label.form__fieldset
+                            textarea.form__textarea(name="comment" id="comment" placeholder="Ваше сообщение")
 
-            .form__buttons
-                button.btn На главную
-                button.btn Войти
+                .form__buttons
+                    button.btn На главную
+                    button.btn Войти
 
     include ../common/_footer

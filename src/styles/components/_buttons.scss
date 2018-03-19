@@ -1,0 +1,28 @@
+.btn {
+    color:$white;
+    background-color: $green_l;
+    padding: 10px 20px;
+    cursor: pointer;
+    @include roboto(medium);
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        background-color: $green_d;
+    }
+
+    &_view_round {
+        border-radius: 25px;
+    }
+
+    &_icon_link {
+        &:before {
+            content: '';
+            margin-right: 10px;
+            background: url('../images/content/link.png') no-repeat;
+            width: 20px;
+            height: 19px;
+
+        }
+    }
+}

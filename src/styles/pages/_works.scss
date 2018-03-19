@@ -1,0 +1,128 @@
+.works {
+    flex-direction: column;
+    background-color: #f8f9f5;
+}
+
+.reviews {
+    min-height: 1114px;
+    background: url('../images/bg/reviews-bg.jpg') no-repeat;
+    background-size: cover;
+}
+
+.works__slider {
+    display: grid;
+    //height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 70% 30%;
+
+    grid-template-areas:
+        "info display"
+        "info btns";
+}
+
+.slider__project-info {
+    grid-area: info;
+    background-color: #ebefe2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   // padding: 0 170px;
+
+}
+
+.slider__stack-tech {
+    text-transform: uppercase;
+    @include roboto(medium);
+    color:$green_d;
+    margin-bottom: 20px;
+}
+
+.slider__main-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: display;
+    background-color: #e1e4d7;
+    padding: 60px 0;
+}
+
+.slider__image {
+    height: auto;
+}
+
+.slider__nav {
+    grid-area: btns;
+    //background-color: #93998d;
+    //opacity: .7;
+}
+
+.slider__nav-list {
+    display: flex;
+
+}
+
+.slider__nav-item {
+    flex:1;
+    position: relative;
+}
+
+.slider__nav-arrow {
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #93998d;
+        opacity: .7;
+    }
+}
+
+.slider__scroll {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    width: 100%;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #93998d;
+        opacity: .7;
+    }
+}
+
+.reviews {
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviews-block__list {
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.reviews-block__item {
+    flex:1;
+}
+
+.reviews-block__avatar {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.reviews-block__image {
+    display: block;
+}

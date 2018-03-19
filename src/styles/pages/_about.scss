@@ -21,21 +21,6 @@
     background-color: #f4f5f0;
 }
 
-.triangle {
-    display: none;
-    margin-top: -160px;
-}
-
-.triangle__shape {
-    &_color_white {
-        fill: $white;
-    }
-
-    &_color_beige {
-        fill: $beige;
-    }
-}
-
 .about__column {
     flex:1;
     margin-right: 10px;
@@ -45,9 +30,6 @@
     }
 }
 
-.block-title__text {
-    background: url('../images/content/about-header.png') 0 bottom no-repeat;
-}
 
 .about__title {
     .section-title {

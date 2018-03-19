@@ -1,0 +1,14 @@
+.triangle {
+    display: none;
+    margin-top: -160px;
+}
+
+.triangle__shape {
+    &_color_white {
+        fill: $white;
+    }
+
+    &_color_beige {
+        fill: $beige;
+    }
+}

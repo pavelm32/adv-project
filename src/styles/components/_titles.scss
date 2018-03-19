@@ -16,6 +16,25 @@
     }
 }
 
+.block-title__text {
+    &_text_about {
+        background: url('../images/content/about-header.png') no-repeat;
+    }
+
+    &_text_works {
+        background: url('../images/content/works-header.png') no-repeat;
+    }
+
+    &_position_leftbottom {
+        background-position: left bottom;
+    }
+
+    &_position_centerbottom {
+        background-position: center bottom;
+    }
+}
+
+
 .subtitle {
     margin-bottom: 40px;
     font-size: 35px;
@@ -32,4 +51,8 @@
         width: 90px;
         margin: 10px auto 0;
     }
+}
+
+.subtitle__new-line {
+    display: block;
 }
