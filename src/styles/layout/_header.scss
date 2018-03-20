@@ -11,6 +11,11 @@
         background: url('../images/bg/works-bg.jpg') no-repeat;
         background-size: cover;
     }
+
+    &_blog{
+        background: url('../images/bg/blog-bg.jpg') no-repeat;
+        background-size: cover;
+    }
 }
 
 .header__top, .header__bottom {
@@ -29,10 +34,16 @@
     text-align: right;
 }
 
-.header__user {
+.header__user, .header__title {
 
     margin: 100px auto 0;
     //flex-grow: 1;
+}
+
+.header__title {
+    .section-title {
+        margin: 35px auto;
+    }
 }
 
 .header__arrow {

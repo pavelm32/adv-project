@@ -108,7 +108,7 @@
 			</section>
 			<section class="reviews section">
 				<div class="block-title reviews__title">
-					<div class="block-title__text block-title__text_text_about block-title__text_position_centerbottom">
+					<div class="block-title__text block-title__text_text_about block-title__text_position_centerbottom reviews__title-text">
 						<h1 class="section-title">Что обо мне говорят</h1>
 					</div>
 				</div>
@@ -118,45 +118,52 @@
 							<div class="reviews-block__avatar"><img class="reviews-block__image" src="./images/content/avatar-photo1.jpg"></div>
 							<blockquote class="quote reviews-block__quote">
 								<p>Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</p>
-								<p class="quote__name">Ковальчук Дмитрий</p>
-								<p class="quote__sign">- основатель Loftschool</p>
+								<div class="quote__name">Ковальчук Дмитрий</div>
+								<div class="quote__sign">- основатель Loftschool</div>
 							</blockquote>
 						</li>
 						<li class="reviews-block__item">
 							<div class="reviews-block__avatar"><img class="reviews-block__image" src="./images/content/avatar-photo2.jpg"></div>
 							<blockquote class="quote reviews-block__quote">
 								<p>Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!</p>
-								<p class="quote__name">Сабанцев Владимир</p>
-								<p class="quote__sign">- преподаватель</p>
+								<div class="quote__name">Сабанцев Владимир</div>
+								<div class="quote__sign">- преподаватель</div>
 							</blockquote>
 						</li>
 					</ul>
 				</div>
 				<div class="reviews__form-wrap">
 					<form class="form reviews__form">
-						<h2 class="form__title subtitle">Связаться со мной</h2>
-						<div class="form__fields">
-							<div class="form__row">
-								<label class="form__fieldset">
-									<input class="form__input" type="text" name="name" id="uname" placeholder="Имя">
-								</label>
-							</div>
-							<div class="form__row">
-								<label class="form__fieldset">
-									<input class="form__input" type="text" name="email" id="umail" placeholder="Email">
-								</label>
-							</div>
-							<div class="form__row">
-								<label class="form__fieldset">
-									<textarea class="form__textarea" name="comment" id="comment" placeholder="Ваше сообщение"></textarea>
-								</label>
+						<div class="form__container">
+							<h2 class="form__title subtitle">Связаться со мной</h2>
+							<div class="form__fields">
+								<div class="form__row">
+									<label class="form__fieldset">
+										<input class="form__input" type="text" name="name" id="uname" placeholder="Имя">
+									</label>
+								</div>
+								<div class="form__row">
+									<label class="form__fieldset">
+										<input class="form__input" type="text" name="email" id="umail" placeholder="Email">
+									</label>
+								</div>
+								<div class="form__row">
+									<label class="form__fieldset">
+										<textarea class="form__textarea" name="comment" id="comment" placeholder="Ваше сообщение"></textarea>
+									</label>
+								</div>
 							</div>
 						</div>
 						<div class="form__buttons">
-							<button class="btn">На главную</button>
-							<button class="btn">Войти</button>
+							<button class="btn form__btn">Отправить</button>
+							<button class="btn form__btn">Очистить</button>
 						</div>
 					</form>
+				</div>
+				<div class="scroll-arrow reviews__arrow">
+					<svg class="scroll-arrow__shape scroll-arrow__shape_up">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./images/sprite.svg#arrow_down"></use>
+					</svg>
 				</div>
 			</section>
 			<footer class="footer section">

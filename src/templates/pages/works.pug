@@ -76,7 +76,7 @@ block content
 
     section.reviews.section
         .block-title.reviews__title
-            .block-title__text.block-title__text_text_about.block-title__text_position_centerbottom
+            .block-title__text.block-title__text_text_about.block-title__text_position_centerbottom.reviews__title-text
                 h1.section-title Что обо мне говорят
         .reviews-block
             ul.reviews-block__list
@@ -86,26 +86,31 @@ block content
                             img(class="reviews-block__image" src=`${item.pic}`)
                         blockquote.quote.reviews-block__quote
                             p #{item.text}
-                            p.quote__name #{item.name}
-                            p.quote__sign - #{item.sign}
+                            .quote__name #{item.name}
+                            .quote__sign - #{item.sign}
 
         .reviews__form-wrap
             form.form.reviews__form
-                h2.form__title.subtitle Связаться со мной
+                .form__container
+                    h2.form__title.subtitle Связаться со мной
 
-                .form__fields
-                    .form__row
-                        label.form__fieldset
-                            input.form__input(type="text" name="name" id="uname" placeholder="Имя")
-                    .form__row
-                        label.form__fieldset
-                            input.form__input(type="text" name="email" id="umail" placeholder="Email")
-                    .form__row
-                        label.form__fieldset
-                            textarea.form__textarea(name="comment" id="comment" placeholder="Ваше сообщение")
+                    .form__fields
+                        .form__row
+                            label.form__fieldset
+                                input.form__input(type="text" name="name" id="uname" placeholder="Имя")
+                        .form__row
+                            label.form__fieldset
+                                input.form__input(type="text" name="email" id="umail" placeholder="Email")
+                        .form__row
+                            label.form__fieldset
+                                textarea.form__textarea(name="comment" id="comment" placeholder="Ваше сообщение")
 
                 .form__buttons
-                    button.btn На главную
-                    button.btn Войти
+                    button.btn.form__btn Отправить
+                    button.btn.form__btn Очистить
+
+        .scroll-arrow.reviews__arrow
+            svg.scroll-arrow__shape.scroll-arrow__shape_up
+                use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./images/sprite.svg#arrow_down")
 
     include ../common/_footer
