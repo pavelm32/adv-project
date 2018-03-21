@@ -10,8 +10,84 @@
 .form__row {
     margin-bottom: 20px;
 
+    &_align_center {
+        display: flex;
+        justify-content: center;
+    }
+
+    &_column {
+        flex-direction: column;
+        align-items: center;
+    }
+
     &:last-child {
         //margin-bottom: 0;
+    }
+}
+
+.form__label {
+    color:$white;
+
+    &_checkbox {
+        display: flex;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+
+
+        &:before {
+            content: '';
+            position: relative;
+            width: 20px;
+            height: 20px;
+            background-color: $white;
+            border: 0;
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+
+        &:after {
+            width: 11px;
+            height: 9px;
+            content: '';
+            background: url('../images/content/check.png') 50%/contain no-repeat;
+            display: none;
+            position: absolute;
+            color: $white;
+            top: 6px;
+            left: 5px;
+        }
+    }
+
+    &_radio {
+        display: flex;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        white-space: nowrap;
+
+        &:before{
+            content: '';
+            position: relative;
+            width: 20px;
+            height: 20px;
+            background-color: $white;
+            border: 0;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        &:after{
+            content: '';
+            display: none;
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: $green_l;
+            border-radius: 50%;
+            top: 7px;
+            left: 6px;
+        }
     }
 }
 
@@ -22,11 +98,45 @@
     padding: 10px 20px;
     color: #5d5a55;
     outline: 0;
+
+    &_type_checkbox {
+        display: none;
+
+        &:checked {
+            & + .form__label_checkbox {
+                &:before {
+                    background-color: $green_l;
+                }
+
+                &:after {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &_type_radio {
+        display: none;
+
+        &:checked {
+            & + .form__label_radio {
+                &:after {
+                    display: block;
+                }
+            }
+        }
+    }
 }
 
 .form__textarea {
     resize: none;
     height: 140px;
+}
+
+.form__group-fields {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
 }
 
 .form__buttons {

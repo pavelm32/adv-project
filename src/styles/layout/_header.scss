@@ -2,6 +2,10 @@
     min-height: 600px;
     flex-direction: column;
 
+    &_welcome {
+        min-height: auto;
+    }
+
     &_about {
         background: url('../images/bg/about-bg.jpg') no-repeat;
         background-size: cover;
@@ -34,6 +38,13 @@
     text-align: right;
 }
 
+.header__buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 28px;
+    width: 100%;
+}
+
 .header__user, .header__title {
 
     margin: 100px auto 0;
@@ -48,4 +59,8 @@
 
 .header__arrow {
     bottom: 70px;
+}
+
+.header__link {
+    text-decoration: none;
 }

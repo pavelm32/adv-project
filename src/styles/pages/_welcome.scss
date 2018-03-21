@@ -1,0 +1,63 @@
+.wrapper_page_welcome {
+    background: url('../images/bg/main-bg.jpg') no-repeat;
+    background-size: cover;
+}
+
+.welcome {
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - #{-$footer-offset-main});
+}
+
+.flip__container {
+    background-color: rgba(#000000,0.6);
+    border-radius: 4px;
+    position: relative;
+}
+
+.welcome__user-container, .welcome__form-container {
+    padding: 40px 60px 40px;
+}
+
+.welcome__user, .welcome__socials {
+    margin-bottom: 40px;
+}
+
+.welcome__socials {
+
+}
+
+.welcome__name {
+    font-size: 28px;
+}
+
+.welcome__buttons {
+    display: flex;
+    position: absolute;
+    bottom:0;
+    width: 100%;
+}
+
+.welcome__btn {
+    flex:1;
+    border: 0;
+    @include roboto(medium);
+    display: block;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+
+
+    border-left: 1px solid rgba($white, .5);
+    border-right: 1px solid rgba($white, .5);
+
+    &:first-child{
+        border-left: none;
+        border-radius:0 0 0 4px;
+    }
+
+    &:last-child{
+        border-right: none;
+        border-radius:0 0 4px 0;
+    }
+}

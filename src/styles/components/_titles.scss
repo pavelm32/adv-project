@@ -60,6 +60,14 @@
         width: 90px;
         margin: 10px auto 0;
     }
+
+    &_color_white {
+        color: $white;
+
+        &:after {
+            background-color: $white;
+        }
+    }
 }
 
 .subtitle__new-line {
