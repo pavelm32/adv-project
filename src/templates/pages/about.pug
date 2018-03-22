@@ -96,46 +96,51 @@ block content
 
     section.about.section
         .about__left
-            svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 900 160" preserveaspectratio="none")
+            .about__top
+                .triangle.triangle_left.triangle_color_left_dbeige
+            //-svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 900 160" preserveaspectratio="none")
                 polygon.triangle__shape.triangle__shape_color_beige(points="0,0   0,160   900,160   900,155")
-            .about__column
-                .block-title.about__title
-                    .block-title__text.block-title__text_text_about.block-title__text_position_centerbottom
-                        h1.section-title #{settings.title}
-            .about__column
-                .about__user-info
-                    .about__photo
-                        img.about__image(src="./images/content/avatar-content.jpg")
-                    .about__description
-                        h2.about__user-info-title.subtitle Кто я
-                        .about__user-preview-text
-                            p
-                                | Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений.
-                                | Мне нравится делать интересные и современные проекты.
-                            p
-                                | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент.
-                                | А пока посмотрите,как тут всё классно и красиво!
+            .about__container
+                .about__column
+                    .block-title.about__title
+                        .block-title__text.block-title__text_text_about.block-title__text_position_centerbottom
+                            h1.section-title #{settings.title}
+                .about__column
+                    .about__user-info
+                        .about__photo
+                            img.about__image(src="./images/content/avatar-content.jpg")
+                        .about__description
+                            h2.about__user-info-title.subtitle Кто я
+                            .about__user-preview-text
+                                p
+                                    | Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений.
+                                    | Мне нравится делать интересные и современные проекты.
+                                p
+                                    | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент.
+                                    | А пока посмотрите,как тут всё классно и красиво!
 
         .about__right
-            svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 900 160" preserveaspectratio="none")
+            .about__top
+                .triangle.triangle_right.triangle_color_right_lwhite
+            //-svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 900 160" preserveaspectratio="none")
                 polygon.triangle__shape.triangle__shape_color_white(points="900,0   900,160   0,160   0,155")
+            .about__container.about__container_right
+                h2.about__skills-title.subtitle Чем я могу быть вам полезен
+                p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачина Backend. Но давайте по порядку.
 
-            h2.about__skills-title.subtitle Чем я могу быть вам полезен
-            p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачина Backend. Но давайте по порядку.
-
-            .skills.about__skills
-                ul.skills__list
-                    each skill in skills
-                        li.skills__item
-                            .skills__name #{skill.name}
-                            ul.skills__tech-list
-                                each tech in skill.items
-                                    li.skills__tech-item
-                                        svg.skills__tech-shape.circles(viewBox='0 0 110 110')
-                                            circle.circles__shape.circles__shape_first(r="45" cx="50%" cy="50%" fill="none")
-                                            circle.circles__shape.circles__shape_second(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)")
-                                        .skills__tech-name-wrap
-                                            span.skills__tech-name #{tech.name}
+                .skills.about__skills
+                    ul.skills__list
+                        each skill in skills
+                            li.skills__item
+                                .skills__name #{skill.name}
+                                ul.skills__tech-list
+                                    each tech in skill.items
+                                        li.skills__tech-item
+                                            svg.skills__tech-shape.circles(viewBox='0 0 110 110')
+                                                circle.circles__shape.circles__shape_first(r="45" cx="50%" cy="50%" fill="none")
+                                                circle.circles__shape.circles__shape_second(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)")
+                                            .skills__tech-name-wrap
+                                                span.skills__tech-name #{tech.name}
 
     section.contacts.section
         .maps.contacts__maps

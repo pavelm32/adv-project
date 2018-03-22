@@ -1,6 +1,46 @@
 .triangle {
-    display: none;
-    margin-top: -160px;
+    //display: none;
+    //margin-top: -160px;
+    border-style: solid;
+    display: block;
+    position: absolute;
+    bottom: 0;
+
+    &_color_left_white {
+        border-bottom-color: #f8f9f5;
+    }
+
+    &_color_right_white {
+        border-bottom-color: #f8f9f5;
+    }
+
+    &_color_right_lwhite {
+        border-bottom-color: #f4f5f0;
+    }
+
+    &_color_left_beige{
+        border-bottom-color: #faf8f0
+    }
+
+    &_color_left_dbeige {
+        border-bottom-color: #ebefe2;
+    }
+
+    &_color_right_beige {
+        border-bottom-color: #faf8f0;
+    }
+
+    &_left {
+        border-width: 0 50vw 17vh 0;
+        border-right-color: transparent;
+        left:0;
+    }
+
+    &_right {
+        border-width: 0 0 17vh 50vw;
+        border-left-color: transparent;
+        right: 0;
+    }
 }
 
 .triangle__shape {

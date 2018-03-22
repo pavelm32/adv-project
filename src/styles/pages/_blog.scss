@@ -9,6 +9,12 @@
     }
 }
 
+.blog__top {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
 .blog__content {
     display: flex;
     background-color: #faf8f0;

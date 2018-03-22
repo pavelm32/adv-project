@@ -3,6 +3,12 @@
     background-color: #f8f9f5;
 }
 
+.works__top {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
 .reviews {
     min-height: 1414px;
     background: url('../images/bg/reviews-bg.jpg') no-repeat;
