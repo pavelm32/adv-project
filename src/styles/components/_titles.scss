@@ -25,22 +25,34 @@
     }
 }
 
-.block-title__text {
-    &_text_about {
-        background: url('../images/content/about-header.png') no-repeat;
+.block-title {
+    position: relative;
+
+    &:before {
+        position: absolute;
+        content: '';
+        display: block;
+        left:0;
+        right: 0;
+        top:0;
+        bottom: 0;
     }
 
     &_text_works {
-        background: url('../images/content/works-header.png') no-repeat;
+        &:before {
+            background: url('../images/content/works-header.png') center center no-repeat;
+        }
     }
 
-    &_position_leftbottom {
-        background-position: left bottom;
+    &_text_about {
+        &:before {
+            background: url('../images/content/about-header.png') center center no-repeat;
+        }
     }
+}
 
-    &_position_centerbottom {
-        background-position: center bottom;
-    }
+.block-title__text {
+    position: relative;
 }
 
 

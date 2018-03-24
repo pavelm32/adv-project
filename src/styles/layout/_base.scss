@@ -90,6 +90,10 @@ h6 {
                 padding-bottom: -($footer-offset-laptop);
             }
 
+            @include tablets {
+                padding-bottom: -($footer-offset-tablet);
+            }
+
             @include phones {
                 padding-bottom: -($footer-offset-phones);
             }

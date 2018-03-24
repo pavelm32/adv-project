@@ -23,6 +23,21 @@
     grid-template-areas:
         "info display"
         "info btns";
+
+    @include tablets {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50% 25% 25%;
+
+        grid-template-areas:
+                "display"
+                "info"
+                "btns";
+    }
+
+    @include phones {
+        grid-template-columns: 1fr;
+        grid-template-rows: 40% 40% 20%;
+    }
 }
 
 .slider__project-info {
@@ -34,13 +49,26 @@
     flex-direction: column;
    // padding: 0 170px;
 
+    @include tablets {
+        padding: rem(40px) 0;
+    }
+}
+
+.slider__project-name {
+    margin-bottom: rem(20px);
+    width: 55%;
+
+    @include laptop {
+        width: 78%;
+    }
+
 }
 
 .slider__stack-tech {
     text-transform: uppercase;
     @include roboto(medium);
     color:$green_d;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .slider__main-slide {
@@ -119,6 +147,20 @@
     display: flex;
     width: 50%;
     margin: 0 auto 50px;
+
+    @include laptop {
+        width: 70%;
+    }
+
+    @include tablets {
+        width: 90%;
+    }
+
+    @include  phones {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .reviews-block__item {
@@ -129,6 +171,15 @@
     &:last-child {
         margin-right: 0;
     }
+
+    @include  phones {
+        margin-right: 0;
+        margin-bottom: 20px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 
 .reviews-block__avatar {
@@ -137,6 +188,11 @@
     width: 80px;
     height: 80px;
     margin: 0 auto;
+
+    @include phones {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .reviews-block__image {
