@@ -1,11 +1,12 @@
 .footer {
-    margin-top: $footer-offset;
+    //margin-top: $footer-offset;
     color:$white;
     @include roboto(light);
     flex-direction: column;
     position: absolute;
     bottom: 0;
     width: 100%;
+    display: flex;
 }
 
 .footer__top, .footer__bottom {
@@ -13,27 +14,28 @@
 }
 
 .footer__top {
-    background-color: $dark; //rgba($dark, .85);
-    //padding-top: 30px;
-    //padding-bottom: 50px;
-    padding: 25px $content-offset 37px;
+    background-color: $dark;
+    padding-bottom: rem(58px);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-}
 
-.footer__container-top {
-    padding-top: 30px;
-    padding-bottom: 50px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    @include laptop {
+        flex-wrap: wrap;
+    }
+
+    @include phones {
+        text-align: center;
+    }
+
 }
 
 .footer__column {
-    flex:1;
+    width: 32%;
     position: relative;
+    margin-top: rem(25px);
+    padding: 0 rem(20px) 0;
 
     &:after {
         content: '';
@@ -43,7 +45,7 @@
         display: inline-block;
         height: 87px;
         position: absolute;
-        right: 18px;
+        right: 0;
         top: 0;
     }
 
@@ -56,18 +58,55 @@
     p {
         margin: 0;
     }
-}
 
-.footer__short-text {
-    padding-right: 30%;
+    @include laptop {
+        width: 43%;
+
+        &:after {
+            display: none;
+        }
+
+        &:last-child {
+            margin-top: rem(50px);
+            width: 100%;
+        }
+
+        &:first-child {
+            &:after {
+                display: block;
+            }
+        }
+    }
+
+    @include  phones {
+        width:100%;
+        padding-bottom: 22px;
+
+        &:after {
+            width: 80%;
+            background-color: #fff;
+            margin: 0 auto;
+            opacity: .2;
+            height: 1px;
+            position: absolute;
+            left: 0;
+            top: initial;
+            bottom: 0;
+            display: block;
+        }
+
+        &:last-child {
+            margin-top: rem(25px);
+        }
+    }
 }
 
 .footer__menu{
-    margin-bottom: 25px;
+    margin-bottom: rem(25px);
 }
 
 .footer__bottom {
-    background-color: $green_l; //rgba($green_l, .85);
+    background-color: $green_l;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -85,7 +124,7 @@
 .footer__copyright {
     text-align: center;
     p {
-        margin: 5px auto;
+        margin: rem(5px) auto;
     }
 }
 

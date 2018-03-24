@@ -95,12 +95,15 @@ block content
     include ../common/_header
 
     section.about.section
-        .about__left
-            .about__top
-                .triangle.triangle_left.triangle_color_left_dbeige
-            //-svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 900 160" preserveaspectratio="none")
-                polygon.triangle__shape.triangle__shape_color_beige(points="0,0   0,160   900,160   900,155")
-            .about__container
+        .about__top
+            .triangle.triangle_left.triangle_color_left_dbeige.about__triangle-left
+                //-svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 900 160" preserveaspectratio="none")
+                                polygon.triangle__shape.triangle__shape_color_beige(points="0,0   0,160   900,160   900,155")
+            .triangle.triangle_right.triangle_color_right_lwhite.about__triangle-right
+                //-svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 900 160" preserveaspectratio="none")
+                                polygon.triangle__shape.triangle__shape_color_white(points="900,0   900,160   0,160   0,155")
+        .about__bottom
+            .about__container.about__container_left
                 .about__column
                     .block-title.about__title
                         .block-title__text.block-title__text_text_about.block-title__text_position_centerbottom
@@ -119,28 +122,25 @@ block content
                                     | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент.
                                     | А пока посмотрите,как тут всё классно и красиво!
 
-        .about__right
-            .about__top
-                .triangle.triangle_right.triangle_color_right_lwhite
-            //-svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 900 160" preserveaspectratio="none")
-                polygon.triangle__shape.triangle__shape_color_white(points="900,0   900,160   0,160   0,155")
             .about__container.about__container_right
-                h2.about__skills-title.subtitle Чем я могу быть вам полезен
-                p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачина Backend. Но давайте по порядку.
-
-                .skills.about__skills
-                    ul.skills__list
-                        each skill in skills
-                            li.skills__item
-                                .skills__name #{skill.name}
-                                ul.skills__tech-list
-                                    each tech in skill.items
-                                        li.skills__tech-item
-                                            svg.skills__tech-shape.circles(viewBox='0 0 110 110')
-                                                circle.circles__shape.circles__shape_first(r="45" cx="50%" cy="50%" fill="none")
-                                                circle.circles__shape.circles__shape_second(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)")
-                                            .skills__tech-name-wrap
-                                                span.skills__tech-name #{tech.name}
+                .about__column
+                    h2.about__skills-title.subtitle Чем я могу быть
+                        span.subtitle__new-line вам полезен
+                    p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачина Backend. Но давайте по порядку.
+                .about__column.about__column_full_size
+                    .skills.about__skills
+                        ul.skills__list
+                            each skill in skills
+                                li.skills__item
+                                    .skills__name #{skill.name}
+                                    ul.skills__tech-list
+                                        each tech in skill.items
+                                            li.skills__tech-item
+                                                svg.skills__tech-shape.circles(viewBox='0 0 110 110')
+                                                    circle.circles__shape.circles__shape_first(r="45" cx="50%" cy="50%" fill="none")
+                                                    circle.circles__shape.circles__shape_second(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)")
+                                                .skills__tech-name-wrap
+                                                    span.skills__tech-name #{tech.name}
 
     section.contacts.section
         .maps.contacts__maps
@@ -155,4 +155,4 @@ block content
 
                             .contacts__name #{item.value}
 
-    include ../common/_footer
+

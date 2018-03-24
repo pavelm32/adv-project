@@ -11,7 +11,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    font-size: rem(16px);
     @include roboto();
     line-height: 1.42;
     color: $gray;
@@ -20,7 +20,8 @@ body {
 }
 
 body, html {
-    height: 100%;
+    min-height: 100%;
+    position: relative;
 }
 
 ul {
@@ -76,12 +77,24 @@ h6 {
 }
 
 .section {
-    //background-color: rgba(0,0,0,0.31);
-    //height: 100vh;
-    //height: 100%;
     position: relative;
     display: flex;
 
+    &:last-child {
+        &:after {
+            content: '';
+            display: block;
+            padding-bottom: -($footer-offset);
+
+            @include laptop {
+                padding-bottom: -($footer-offset-laptop);
+            }
+
+            @include phones {
+                padding-bottom: -($footer-offset-phones);
+            }
+        }
+    }
 }
 
 .container {

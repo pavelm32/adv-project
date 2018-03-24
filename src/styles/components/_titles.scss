@@ -1,19 +1,19 @@
 .section-title {
-    font-size: 63px;
+    font-size: rem(63px);
     @include sansus();
     text-align: center;
     color:$dark;
-    margin: 70px 0;
+    margin: rem(70px) 0;
     text-transform: uppercase;
     line-height: 1;
 
     &:after {
         content: '';
         display: block;
-        height: 3px;
+        height: rem(3px);
         background-color: $dark;
-        width: 90px;
-        margin: 10px auto 0;
+        width: rem(90px);
+        margin: rem(10px) auto 0;
     }
 
     &_color_white {
@@ -45,8 +45,8 @@
 
 
 .subtitle {
-    margin-bottom: 40px;
-    font-size: 35px;
+    margin-bottom: rem(40px);
+    font-size: rem(35px);
     @include sansus();
     text-align: center;
     color:$gray;
@@ -55,10 +55,10 @@
     &:after {
         content: '';
         display: block;
-        height: 3px;
+        height: rem(3px);
         background-color: $gray;
-        width: 90px;
-        margin: 10px auto 0;
+        width: rem(90px);
+        margin: rem(10px) auto 0;
     }
 
     &_color_white {
@@ -77,7 +77,7 @@
 
 
 .block-title__avatar {
-    width: 141px;
+    width: rem(141px);
     margin: 0 auto;
     border-radius: 50%;
     overflow: hidden;

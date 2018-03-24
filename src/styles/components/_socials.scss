@@ -43,6 +43,11 @@
 
 .socials__list {
     display: flex;
+
+
+    @include phones {
+        justify-content: center;
+    }
 }
 
 .socials__item {

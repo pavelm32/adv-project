@@ -1,12 +1,6 @@
 .blog {
     flex-direction: column;
     background-color: #f8f9f5;
-
-    &:after {
-        content: '';
-        display: block;
-        padding-bottom: -($footer-offset);
-    }
 }
 
 .blog__top {

@@ -19,10 +19,15 @@
 
 .menu__list {
     display: flex;
+    flex-wrap: wrap;
+
+    @include phones {
+        justify-content: center;
+    }
 }
 
 .menu__item {
-    margin-right: 40px;
+    margin-right: 5%;
 
     &:last-child {
         margin-right: 0;
@@ -33,6 +38,7 @@
     text-decoration: none;
     color:$white;
     @include roboto(bold);
+    white-space: nowrap;
 
     &:hover {
         text-decoration: underline;

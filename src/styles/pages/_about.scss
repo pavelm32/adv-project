@@ -1,50 +1,86 @@
 .about {
-
+    flex-direction: column;
 }
 
-.about__top {
+.about__top, .about__bottom {
     position: relative;
     width: 100%;
     display: flex;
 }
 
-.about__left, .about__right {
-    display: flex;
-    //align-items: flex-start;
-    flex-direction: column;
-    flex:1;
-    //padding: 20px;
+.about__triangle-right {
+    @include tablets {
+        border-bottom-color: #ebefe2;
+    }
+}
+
+.about__bottom {
+    @include tablets {
+        flex-direction: column;
+    }
 }
 
 .about__container {
     display: flex;
     align-items: flex-start;
-    padding: 20px;
+    padding: rem(20px);
+    flex:1;
+
+    &_left {
+        background-color: $beige;
+    }
 
     &_right {
         flex-direction: column;
         align-items: initial;
+        background-color: #f4f5f0;
+    }
+
+    @include laptop{
+        align-items: center;
+        flex-direction: column;
+        padding: 60px 0;
+
+       // padding: rem(20px) rem(60px);
+    }
+
+    @include tablets {
+        //width: 60%;
     }
 }
 
 .about__right {
     flex-direction: column;
+    background-color: #f4f5f0;
 }
 
 .about__left {
     background-color: $beige;
 }
 
-.about__right {
-    background-color: #f4f5f0;
-}
-
 .about__column {
     flex:1;
-    margin-right: 10px;
 
-    &:last-child {
+    @include laptop {
+        flex:initial;
+        width: 75%;
+    }
+
+    @include tablets {
         margin-right: 0;
+
+        &_full_size {
+            width: 80%;
+        }
+
+    }
+
+    @include phones {
+        width: 90%;
+
+        &_full_size {
+            width: 90%;
+        }
     }
 }
 
@@ -60,11 +96,18 @@
 }
 
 .about__photo {
-    margin-bottom: 40px;
+    margin-bottom: rem(40px);
+    text-align: center;
+}
+
+.about__image {
+    width: auto;
+    height: auto;
+    max-width: 100%;
 }
 
 .about__skills-title{
-    width: 50%;
+    width: 100%;
     margin: 0 auto 40px;
 }
 
@@ -80,17 +123,43 @@
     color: $gray;
     @include roboto(medium);
     font-size:28px;
+
+    @include tablets() {
+        text-align: center;
+    }
 }
 
 .skills__tech-list {
+    display: flex;
+    justify-content: flex-start;
 
+    @include tablets() {
+        justify-content: center;
+    }
+
+    @include phones {
+        flex-wrap: wrap;
+    }
 }
 
 .skills__tech-item {
-    display: inline-block;
-    width: 120px;
-    height: 120px;
+    min-width: 20%;
     position: relative;
+    margin-right: 3%;
+
+    @include laptop {
+        min-width: 25%;
+        margin-right: 0;
+    }
+
+    @include tablets {
+        margin-right: 3%;
+    }
+
+    @include phones {
+        min-width: 33%;
+    }
+
 }
 
 .circles {
@@ -145,6 +214,7 @@
     align-items: center;
     color:#455a64;
     @include roboto(medium);
+    transform: translateY(-10%);
 
 }
 

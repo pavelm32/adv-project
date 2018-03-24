@@ -34,12 +34,28 @@
         border-width: 0 50vw 17vh 0;
         border-right-color: transparent;
         left:0;
+
+        @include tablets {
+            border-width: 0 50vw 10vh 0;
+        }
+
+        @include phones {
+            border-width: 0 50vw 6vh 0;
+        }
     }
 
     &_right {
         border-width: 0 0 17vh 50vw;
         border-left-color: transparent;
         right: 0;
+
+        @include tablets {
+            border-width: 0 0 10vh 50vw;
+        }
+
+        @include phones {
+            border-width: 0 0 6vh 50vw;
+        }
     }
 }
 
