@@ -14,6 +14,10 @@ html
         link(rel='stylesheet' href='./css/main.min.css')
         script(src='./js/bundle.js' defer)
     body
+        if settings.page == "welcome"
+            .background
+                canvas.background__canvas
+
         div(class=`wrapper wrapper_page_${settings.page}`)
 
             block content
