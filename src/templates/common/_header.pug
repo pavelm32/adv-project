@@ -3,12 +3,14 @@ header(class=`header section header_${settings.page}`)
         .socials.header__socials
             +socials(socials)
 
-        .hamburger.header__menu
-            svg.hamburger__shape
-                use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./images/sprite.svg#hamburger")
+        .header__hamburger
+            .hamburger
+                //-.hamburger__shape.hamburger__shape_top
+                .hamburger__shape
+                //-.hamburger__shape.hamburger__shape_bottom
 
-        nav.menu.menu-fixed
-            +menu(settings.title, menu)
+                //-svg.hamburger__shape
+                    use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./images/sprite.svg#hamburger")
 
     .header__bottom
         if settings.show_user_info

@@ -1,8 +1,9 @@
-mixin menu(current,items)
-    ul.menu__list
+mixin menu(current,items,prefix)
+    - var active_class = ` ${prefix}__link_active`;
+    ul(class=`${prefix}__list`)
         each item in items
-            li.menu__item
-                a(href=`${item.link}` class=`menu__link${current == item.name ? ' menu__link_active' : ''}`) #{item.name}
+            li(class=`${prefix}__item`)
+                a(href=`${item.link}` class=`${prefix}__link${current == item.name ? active_class : ''}`) #{item.name}
 
 mixin socials(items)
     ul.socials__list

@@ -8,27 +8,31 @@ const canvasSelector = '.background__canvas';
 const filePath = 'images/water.jpg';
 const fileMapsPath = 'images/water-maps.jpg';
 
-export default function initWater() {
+//function initWater() {
 
-    let canvas = document.querySelector(canvasSelector);
+let canvas = document.querySelector(canvasSelector);
 
-    let textureAlign = {x: 0.5, y: 0.9};
-    let textures = [
-        {
-            file: filePath,
-            name: 'image',
-            align: textureAlign,
-            scale: {x: 1, y: 1},
-        },
-        {
-            file: fileMapsPath,
-            name: 'maps',
-            align: textureAlign,
-            scale: {x: 0.2, y: 0.2},
-        },
-    ];
+let textureAlign = {x: 0.5, y: 0.9};
+let textures = [
+    {
+        file: filePath,
+        name: 'image',
+        align: textureAlign,
+        scale: {x: 1, y: 1},
+    },
+    {
+        file: fileMapsPath,
+        name: 'maps',
+        align: textureAlign,
+        scale: {x: 0.2, y: 0.2},
+    },
+];
 
-    let haze = new Haze({
+let haze = {};
+
+if (typeof canvas !== 'undefined' && canvas) {
+
+    haze = new Haze({
         canvas,
         shader,
         textures,
@@ -95,27 +99,32 @@ export default function initWater() {
         }
     });
 
-    function getDPI() {
-        if (typeof window.devicePixelRatio != 'undefined') {
-            return window.devicePixelRatio;
-        } else {
-            return 1;
-        }
-    }
+
 
     window.addEventListener('resize', updateSize);
-    function updateSize() {
-        let container = document.querySelector(divSelector);
-        let dimensions = container.getBoundingClientRect();
-        haze.width = dimensions.width;
-        haze.height = dimensions.height;
-        // haze.dpi=getDPI();
-        haze.dpi = 1;
-        haze.gl.createUniform('1f', 'dpi', haze.dpi);
-        haze.gl.createUniform('2f', 'resolution', haze.width * haze.dpi, haze.height * haze.dpi);
-    }
+
 
     updateSize();
 }
 
-module.exports = initWater();
+function getDPI() {
+    if (typeof window.devicePixelRatio !== 'undefined') {
+        return window.devicePixelRatio;
+    } else {
+        return 1;
+    }
+}
+
+function updateSize() {
+    let container = document.querySelector(divSelector);
+    let dimensions = container.getBoundingClientRect();
+    haze.width = dimensions.width;
+    haze.height = dimensions.height;
+    // haze.dpi=getDPI();
+    haze.dpi = 1;
+    haze.gl.createUniform('1f', 'dpi', haze.dpi);
+    haze.gl.createUniform('2f', 'resolution', haze.width * haze.dpi, haze.height * haze.dpi);
+}
+//}
+
+//module.exports = initWater();
