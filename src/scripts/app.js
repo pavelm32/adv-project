@@ -1,4 +1,4 @@
-const $ = require('jquery');
+import $ from 'jquery';
+
 const menu = require('./common/menu');
-const plugin = require('./common/test');
 const water = require('./index-water');

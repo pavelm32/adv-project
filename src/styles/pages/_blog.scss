@@ -42,16 +42,25 @@
 
     @include tablets {
         position: fixed;
-        left:-250px;
-       // transform: translateX(-100%);
-        /*align-items: center;
+
+        transform: translateX(-100%);
+        align-items: center;
+        justify-content: flex-end;
         height: 100%;
         display: flex;
-        width: 95%;
+        width: 70%;
         z-index: 10;
         top: 0;
         left: 0;
-        background-color: $green_l;*/
+        background-color: $green_l;
+        transition: all .5s;
+        padding: 0 30px;
+    }
+
+    &_opened {
+        @include tablets {
+            transform: translateX(0);
+        }
     }
 }
 
@@ -59,21 +68,25 @@
     display: none;
 
     @include tablets {
-        align-items: center;
         display: flex;
-        position: fixed;
+        align-items: center;
+        position: absolute;
         height: 100%;
-        width: 3.75rem;
+        width: rem(30px);
+        overflow: hidden;
         top: 0;
-        left: -#{rem(38px)};
+        z-index: 1;
+        right: -#{rem(30px)};
     }
 }
 
 .swipe-btn {
     display: block;
-    width: 3.75rem;
+    position: absolute;
+    width: rem(60px);
     background-color: $green_l;
-    height: 3.75rem;
+    height: rem(60px);
+    transform: translateX(-70%);
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 3px 0 3px rgba(#000000, 0.2);
@@ -81,19 +94,7 @@
 
 .sidebar__menu {
     //flex-shrink: 4;
-    @include tablets {
 
-       /* position: fixed;
-        left: 0;
-        display: flex;
-        width: 90%;
-        align-items: center;
-        transform: translateX(-76%);
-        height: 100%;
-        background-color: green;
-        z-index: 10;
-        bottom: 0;*/
-    }
 }
 
 .sidebar__item {
@@ -122,15 +123,37 @@
     display: block;
     padding: 10px 20px;
     border-right: 3px solid transparent;
+    font-weight:400;
+
+    @include tablets {
+        color: $white;
+        opacity: .7;
+    }
 
     &_active {
         border-right: 3px solid $green_l;
         color: $green_d;
+
+        @include tablets {
+
+            border-right: 3px solid transparent;
+            font-weight:700;
+            color: $white;
+            opacity: 1;
+        }
     }
 
     &:hover {
         border-right: 3px solid $green_d;
         color: $green_d;
+
+        @include tablets {
+
+            border-right: 3px solid transparent;
+            font-weight:700;
+            color: $white;
+            opacity: 1;
+        }
     }
 }
 

@@ -1,4 +1,4 @@
-const $ = require('jquery');
+//const $ = require('jquery');
 
 let menu = (function(options) {
     let button = $(options.hamburger);
