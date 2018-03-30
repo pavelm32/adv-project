@@ -29,4 +29,5 @@ module.exports = {
             jQuery: 'jquery'
         })
     ],
+    devtool: "#eval-source-map"
 };
