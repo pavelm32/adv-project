@@ -34,6 +34,7 @@
 .blog__sidebar {
     padding: 0 5%;
     width: 20%;
+    position: relative;
 
     @include laptop {
         padding: 0 1%;
@@ -103,18 +104,40 @@
     margin-bottom: 10px;
     text-align: right;
 
+    &_active {
+        .sidebar__link {
+            border-right: 3px solid $green_d;
+            color: $green_d;
+
+            @include tablets {
+
+                border-right: 3px solid transparent;
+                font-weight: 700;
+                color: $white;
+                opacity: 1;
+            }
+        }
+    }
+
+    &:hover {
+        .sidebar__link {
+            border-right: 3px solid $green_d;
+            color: $green_d;
+
+            @include tablets {
+
+                border-right: 3px solid transparent;
+                font-weight: 700;
+                color: $white;
+                opacity: 1;
+            }
+        }
+    }
+
     &:last-child {
         margin-bottom: 0;
     }
 
-    /*&:after {
-        content: '';
-        display: block;
-        width: 3px;
-        background-color: $green_d;
-        height: 42px;
-        margin-left: 20px;
-    }*/
 }
 
 .sidebar__link {
@@ -130,31 +153,7 @@
         opacity: .7;
     }
 
-    &_active {
-        border-right: 3px solid $green_l;
-        color: $green_d;
 
-        @include tablets {
-
-            border-right: 3px solid transparent;
-            font-weight:700;
-            color: $white;
-            opacity: 1;
-        }
-    }
-
-    &:hover {
-        border-right: 3px solid $green_d;
-        color: $green_d;
-
-        @include tablets {
-
-            border-right: 3px solid transparent;
-            font-weight:700;
-            color: $white;
-            opacity: 1;
-        }
-    }
 }
 
 .blog__articles {

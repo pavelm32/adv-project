@@ -59,17 +59,25 @@ block content
             .slider__nav
                 ul.slider__nav-list
                     li.slider__nav-item
-                        .slider__nav-preview
-                            img.slider__nav-image(src="./images/content/small-slide1.jpg")
+                        .slider__nav-preview.slider__nav-preview_down
+                            ul.slider__previews
+                                li(class="slider__previews-item" data-full="./images/content/big-slide.png"
+                                    data-title="Сайт школы онлайн Образования" data-skills="HTML , CSS, JAVASCRIPT" data-link="#")
+                                    img.slider__nav-image(src="./images/content/small-slide1.jpg")
+                                li(class="slider__previews-item" data-full="./images/content/big-slide.png"
+                                    data-title="Сайт школы онлайн Образования2" data-skills="node" data-link="#")
+                                    img.slider__nav-image(src="./images/content/small-slide2.jpg")
+                                li(class="slider__previews-item" data-full="./images/content/big-slide.png"
+                                    data-title="Сайт школы онлайн Образования3" data-skills="HTML , CSS, JAVASCRIPT" data-link="#")
+                                        img.slider__nav-image(src="./images/content/small-slide1.jpg")
 
-                        .scroll-arrow.slider__scroll
+                        .scroll-arrow.slider__scroll.slider__scroll_down
                             svg.scroll-arrow__shape.scroll-arrow__shape_active.scroll-arrow__shape_shadow
                                 use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./images/sprite.svg#arrow_down")
                     li.slider__nav-item
-                        .slider__nav-preview
-                            img.slider__nav-image(src="./images/content/small-slide2.jpg")
+                        .slider__nav-preview.slider__nav-preview_up
 
-                        .scroll-arrow.slider__scroll
+                        .scroll-arrow.slider__scroll.slider__scroll_up
                             svg.scroll-arrow__shape.scroll-arrow__shape_up.scroll-arrow__shape_active.scroll-arrow__shape_shadow
                                 use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./images/sprite.svg#arrow_down")
 

@@ -17,53 +17,55 @@ block content
     header(class=`header section header_${settings.page}`)
         .header__top
             .header__buttons
-                a.btn.btn_view_round.btn_fill_transparent.header__link(href="/login.html") Авторизоваться
+                a.btn.btn_view_round.btn_fill_transparent.header__link.flip-btn(href="#") Авторизоваться
 
     section.section.welcome
         .welcome__container
             .flip.welcome__flip
-                .flip__container
-                    .welcome__user-container
-                        .user.welcome__user
-                            .user__avatar
-                                img.user__image(src="./images/content/avatar-title.jpg")
-                            .user__info
-                                .user__name.welcome__name Владимир Астахов
-                                .user__description Личный сайт веб разработчика
+                .flip__container.flip__container_front
+                    .flip__inner-container
+                        .welcome__user-container
+                            .user.welcome__user
+                                .user__avatar
+                                    img.user__image(src="./images/content/avatar-title.jpg")
+                                .user__info
+                                    .user__name.welcome__name Владимир Астахов
+                                    .user__description Личный сайт веб разработчика
 
-                        .socials.welcome__socials
-                            +socials(socials)
+                            .socials.welcome__socials
+                                +socials(socials)
 
-                    .welcome__buttons
-                        a.btn.welcome__btn(href="./works.html") Мои работы
-                        a.btn.welcome__btn(href="./about.html") Обо мне
-                        a.btn.welcome__btn(href="./blog.html") Блог
-                .flip__container(style="display:none;")
-                    form.form.welcome__form
-                        .form__container.welcome__form-container
-                            h2.form__title.subtitle.subtitle_color_white Авторизуйтесь
-                            .form__fields
-                                .form__row
-                                    label.form__fieldset
-                                        input.form__input(type="text" name="login" id="ulogin" placeholder="Логин")
-                                .form__row
-                                    label.form__fieldset
-                                        input.form__input(type="password" name="password" id="upassword" placeholder="Пароль")
-                                .form__row.form__row_align_center
-                                    label.form__fieldset.form__fieldset_checkbox
-                                        input.form__input.form__input_type_checkbox(type="checkbox" name="is_human" id="is_human" value="1")
-                                        .form__label.form__label_checkbox Я человек
-                                .form__row.form__row_align_center.form__row_column
-                                    .form__group-fields
-                                        .form__label Вы точно не робот?
-                                    .form__group-fields
+                        .welcome__buttons
+                            a.btn.welcome__btn(href="./works.html") Мои работы
+                            a.btn.welcome__btn(href="./about.html") Обо мне
+                            a.btn.welcome__btn(href="./blog.html") Блог
+                .flip__container.flip__container_back
+                    .flip__inner-container
+                        form.form.welcome__form
+                            .form__container.welcome__form-container
+                                h2.form__title.subtitle.subtitle_color_white Авторизуйтесь
+                                .form__fields
+                                    .form__row
                                         label.form__fieldset
-                                            input.form__input.form__input_type_radio(type="radio" name="is_human_sure" id="is_human_sure_yes" value="1")
-                                            .form__label.form__label_radio Да
+                                            input.form__input(type="text" name="login" id="ulogin" placeholder="Логин")
+                                    .form__row
                                         label.form__fieldset
-                                            input.form__input.form__input_type_radio(type="radio" name="is_human_sure" id="is_human_sure_not" value="0" checked="checked")
-                                            .form__label.form__label_radio Не уверен
-                        .form__buttons
-                            button.btn.form__btn На главную
-                            button.btn.form__btn Войти
+                                            input.form__input(type="password" name="password" id="upassword" placeholder="Пароль")
+                                    .form__row.form__row_align_center
+                                        label.form__fieldset.form__fieldset_checkbox
+                                            input.form__input.form__input_type_checkbox(type="checkbox" name="is_human" id="is_human" value="1")
+                                            .form__label.form__label_checkbox Я человек
+                                    .form__row.form__row_align_center.form__row_column
+                                        .form__group-fields
+                                            .form__label Вы точно не робот?
+                                        .form__group-fields
+                                            label.form__fieldset
+                                                input.form__input.form__input_type_radio(type="radio" name="is_human_sure" id="is_human_sure_yes" value="1")
+                                                .form__label.form__label_radio Да
+                                            label.form__fieldset
+                                                input.form__input.form__input_type_radio(type="radio" name="is_human_sure" id="is_human_sure_not" value="0" checked="checked")
+                                                .form__label.form__label_radio Не уверен
+                            .form__buttons
+                                button.btn.form__btn.flip-btn На главную
+                                button.btn.form__btn Войти
 

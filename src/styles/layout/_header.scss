@@ -66,6 +66,10 @@
 
 .header__link {
     text-decoration: none;
+
+    &_hidden {
+        visibility: hidden;
+    }
 }
 
 
