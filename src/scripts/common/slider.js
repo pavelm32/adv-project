@@ -200,15 +200,18 @@ let Slider = function(container) {
     };
 };
 
-let slider = new Slider($('.works'));
-slider.setDefaults();
+if ($('.works').length > 0) {
+    let slider = new Slider($('.works'));
+    slider.setDefaults();
 
-$('.slider__scroll_down').on('click', function(e) {
-    e.preventDefault();
-    slider.moveSlide('prev');
-});
+    $('.slider__scroll_down').on('click', function(e) {
+        e.preventDefault();
+        slider.moveSlide('prev');
+    });
 
-$('.slider__scroll_up').on('click', function(e) {
-    e.preventDefault();
-    slider.moveSlide('next');
-});
+    $('.slider__scroll_up').on('click', function(e) {
+        e.preventDefault();
+        slider.moveSlide('next');
+    });
+
+}

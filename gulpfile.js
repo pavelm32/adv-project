@@ -145,6 +145,11 @@ gulp.task('server', function() {
     browserSync.watch(buildPath + '/**/*.*', reload);
 });
 
+gulp.task('build', gulp.series(
+   // "svg",
+    gulp.parallel("styles", "images", "fonts", "scripts", "templates")
+));
+
 gulp.task('default', gulp.series(
     "clean",
     gulp.parallel("styles", "scripts", "templates", "images", "fonts"),
