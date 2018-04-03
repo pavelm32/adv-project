@@ -69,12 +69,12 @@ module.exports = {
         extensions: ["*", ".js", ".vue", ".json"]
     },
     devServer: {
-       /*proxy: {
+       proxy: {
             '*' : {
                 target: 'http://localhost:3000/',
                 secure: false,
             }
-        },*/
+        },
         contentBase: path.join(__dirname, "public"),
         publicPath: "/js",
         historyApiFallback: true,
