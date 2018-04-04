@@ -128,3 +128,60 @@ h6 {
         display: block;
     }
 }
+
+.preloader {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    display: none;
+}
+
+.preloader__container {
+    position: relative;
+}
+
+.preloader__svg {
+
+}
+
+.preloader__line {
+    stroke:$white;
+    stroke-width:3.9003;
+    stroke-miterlimit:10;
+    fill:none;
+    stroke-dasharray: 80;
+    stroke-dashoffset: 140;
+    transition: all 1s;
+
+    &_first {
+        path {
+            d: path('M 0 38.005 c 6.663 0 6.663 7.801 13.327 7.801 c 6.665 0 6.665 -7.801 13.33 -7.801 c 6.667 0 6.667 7.801 13.334 7.801 c 6.666 0 6.666 -7.801 13.331 -7.801 c 6.67 0 6.67 7.801 13.339 7.801 S 73.33 38.005 80 38.005');
+        }
+    }
+
+    &_second {
+        path {
+            d: path('M 0 61.684 c 6.663 0 6.663 7.801 13.327 7.801 c 6.665 0 6.665 -7.801 13.33 -7.801 c 6.667 0 6.667 7.801 13.334 7.801 c 6.666 0 6.666 -7.801 13.331 -7.801 c 6.67 0 6.67 7.801 13.339 7.801 S 73.33 61.684 80 61.684');
+        }
+    }
+
+    &_third {
+        path {
+            d: path('M 0 85.362 c 6.663 0 6.663 7.801 13.327 7.801 c 6.665 0 6.665 -7.801 13.33 -7.801 c 6.667 0 6.667 7.801 13.334 7.801 c 6.666 0 6.666 -7.801 13.331 -7.801 c 6.67 0 6.67 7.801 13.339 7.801 S 73.33 85.362 80 85.362');
+        }
+    }
+}
+
+.preloader__text {
+    position: absolute;
+    color:$white;
+    width: 100%;
+    top: 0;
+    text-align: center;
+    left: 0;
+}

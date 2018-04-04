@@ -1,6 +1,21 @@
 
 .overlay#overlay
 
+.preloader
+    .preloader__container
+        svg(version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" class="preloader__svg"
+        width="80px" height="95.113px" viewBox="0 0 80 95.113" enable-background="new 0 0 80 95.113" xml:space="preserve")
+            g.preloader__line.preloader__line_first
+                path
+
+            g.preloader__line.preloader__line_second
+                path
+
+            g.preloader__line.preloader__line_third
+                path
+
+        span.preloader__text 100
+
 .wrapper-menu
     nav.fixed-menu
         +menu(settings.title, menu, 'fixed-menu')
