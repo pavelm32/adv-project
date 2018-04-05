@@ -3,8 +3,12 @@ const path = require('path');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 
+require('./api/models/db');
+const mongoose = require('mongoose');
+
 const app = express();
 const index = require('./routes/index');
+//const indexApi = require('./api/routes/index')
 
 app.use(express.static(path.join(__dirname, 'public')));
 

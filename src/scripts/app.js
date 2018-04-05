@@ -5,3 +5,6 @@ const menu = require('./common/menu');
 const water = require('./index-water');
 const sidebar = require('./common/blogmenu');
 const slider = require('./common/slider');
+const preloader = require('./common/preloader2')();
+
+preloader.init();

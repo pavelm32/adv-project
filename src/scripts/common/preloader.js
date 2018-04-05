@@ -1,6 +1,6 @@
 module.exports = () => {
     const ImagePreloader = require("image-preloader");
-    const isScroll = require("./isScroll.js");
+   // const isScroll = require("./isScroll.js");
     const preloader = document.querySelector(".preloader");
     const preloaderSvg = document.querySelector(".preloader__svg");
     const circleOne = document.querySelector(".preloader__circle-one");
@@ -53,7 +53,7 @@ module.exports = () => {
                 preloader.style.opacity = 0;
                 setTimeout(() => {
                     preloader.style.display = "none";
-                    isScroll(true);
+                    //isScroll(true);
                 }, 1100);
             }, 1000);
         }
@@ -94,7 +94,7 @@ module.exports = () => {
             document.querySelector(".parallax").style.display = "none";
         });
     if (preloaderSvg) {
-        isScroll(false);
+        //isScroll(false);
         animateInterval = setInterval(animatePreloader, 80);
     }
 };

@@ -130,7 +130,7 @@ h6 {
 }
 
 .preloader {
-    position: absolute;
+    position: fixed;
     top:0;
     bottom: 0;
     left: 0;
@@ -138,7 +138,10 @@ h6 {
     justify-content: center;
     align-items: center;
     display: flex;
-    display: none;
+    background-color: $green_l;
+    opacity: .85;
+    z-index: 1;
+   // display: none;
 }
 
 .preloader__container {

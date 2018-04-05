@@ -4,6 +4,8 @@
     right: 0;
     bottom: 0;
     left: 0;
+    background: url('../images/bg/main-bg.jpg') no-repeat;
+    background-size: cover;
 
     &:after {
         content: '';
@@ -17,8 +19,8 @@
 }
 
 .wrapper_page_welcome {
-    //background: url('../images/bg/main-bg.jpg') no-repeat;
-    //background-size: cover;
+   // background: url('../images/bg/main-bg.jpg') no-repeat;
+   // background-size: cover;
 }
 
 .welcome {
