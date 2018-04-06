@@ -2,19 +2,19 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const BlogSchema = new Schema({
-    title: {
+    name: {
         type: String,
-        required: [true, 'Укажите заголовок статьи']
+        required: [true, 'Укажите заголовок статьи'],
     },
-    body: {
+    html: {
         type: String,
-        required: [true, 'Укажите содержимое статьи']
+        required: [true, 'Укажите содержимое статьи'],
     },
     date: {
         type: Date,
         default: Date.now,
-        required: [true, 'Укажите дату публикации']
-    }
+        required: [true, 'Укажите дату публикации'],
+    },
 });
 
 // просим mongoose сохранить модель для ее дальнейшего использования

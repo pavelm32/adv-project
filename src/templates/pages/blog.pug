@@ -12,25 +12,6 @@ block variables
             show_user_info: false
         }
 
-    -
-        var art = [
-            {
-                name: 'Самое важное в SASS',
-                link: '#'
-            },
-            {
-                name: 'Приёмы в вёрстке, без которых не обходится ни один сайт',
-                link: '#'
-            },
-            {
-                name: 'Самый необходимый набор Gulp плагинов',
-                link: '#'
-            },
-            {
-                name: 'Почему я выбрал Jade',
-                link: '#'
-            }
-        ]
 block content
 
     include ../common/_header
@@ -51,12 +32,24 @@ block content
                     .swipe-btn
                 nav.menu.sidebar__menu.menu_fixed
                     ul.sidebar__list
-                        each item,inx in art
+                        each item,inx in articles
                             li(class=`sidebar__item${inx == 0 ? ' sidebar__item_active' : ''}`)
-                                a(href=`${item.link}` class=`sidebar__link`) #{item.name}
+                                a(href=`#` class=`sidebar__link`) #{item.name}
 
             .blog__articles
-                article.article.blog__article
+                if (articles)
+                    each item,inx in articles
+                        article.article.blog__article
+                            h2.article__title.subtitle #{item.name}
+                            -
+                                var date= new Date(item.date).toLocaleDateString('ru', {
+                                    year: 'numeric',
+                                    month: 'long',
+                                    day: '2-digit'
+                                })
+                            p.article__date #{date}
+                            div !{item.body}
+                //-article.article.blog__article
                     h2.article__title.subtitle Самое важное в SASS
                     p.article__date 22 ноября 2016
                     p
@@ -77,7 +70,7 @@ block content
                             li.block-code__row
                             li.block-code__row $(jquery)
 
-                article.article.blog__article
+                //-article.article.blog__article
                     h2.article__title.subtitle Приёмы в вёрстке, без которых не обходится ни один сайт
                     p.article__date 13 ноября 2016
                     p
@@ -91,7 +84,7 @@ block content
                         | реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров,
                         | соответствует насущным потребностям.
 
-                article.article.blog__article
+                //-article.article.blog__article
                     h2.article__title.subtitle Самый необходимый набор Gulp плагинов
                     p.article__date 13 ноября 2016
                     p
@@ -105,7 +98,7 @@ block content
                         | реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров,
                         | соответствует насущным потребностям.
 
-                article.article.blog__article
+                //-article.article.blog__article
                     h2.article__title.subtitle Почему я выбрал Jade
                     p.article__date 13 ноября 2016
                     p

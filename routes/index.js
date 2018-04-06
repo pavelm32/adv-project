@@ -8,6 +8,7 @@ const ctrlAdmin = require('../controllers/admin');
 const ctrlWorks = require('../controllers/works');
 
 router.get('/', ctrlHome.index);
+router.post('/', ctrlHome.auth);
 //router.post('/mail', ctrlHome.sendEmail);
 
 router.get('/blog', ctrlBlog.blog);

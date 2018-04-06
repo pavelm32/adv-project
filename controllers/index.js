@@ -9,6 +9,16 @@ module.exports.index = function (req, res) {
     res.render('pages/index', Object.assign({}, sendObj));
 };
 
+module.exports.auth = function (req, res) {
+    // требуем наличия логина и пароля в теле запроса
+    if (!req.body.login || !req.body.password) {
+        // если не указан логин или пароль - сообщаем об этом
+        return res.redirect('/?msg=Все поля обязательны к заполнению!');
+    }
+
+    res.redirect('/admin');
+};
+
 /*module.exports.sendEmail = function(req, res) {
     // требуем наличия имени, обратной почты и текста
     if (!req.body.name || !req.body.email || !req.body.text) {

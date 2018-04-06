@@ -22,9 +22,9 @@ module.exports.createArticle = function (req, res) {
     // создаем новую запись блога и передаем в нее поля из формы
     const Model = mongoose.model('blog');
     let item = new Model({
-        title: req.body.title,
+        name: req.body.name,
         date: new Date(req.body.date),
-        body: req.body.text
+        html: req.body.html,
     });
     // сохраняем запись в базе
     item
@@ -38,7 +38,7 @@ module.exports.createArticle = function (req, res) {
             res
                 .status(404)
                 .json({
-                    status: 'При добавление записи произошла ошибка: ' + err
+                    status: 'При добавление записи произошла ошибка: ' + err,
                 });
         });
 };
@@ -47,9 +47,9 @@ module.exports.editArticle = function (req, res) {
     const id = req.params.id;
 
     let data = {
-        title: req.body.title,
+        name: req.body.name,
         date: new Date(req.body.date),
-        body: req.body.text
+        html: req.body.html,
     };
 
     const Model = mongoose.model('blog');
@@ -71,7 +71,7 @@ module.exports.editArticle = function (req, res) {
             res
                 .status(404)
                 .json({
-                    status: 'При обновлении записи произошла ошибка: ' + err
+                    status: 'При обновлении записи произошла ошибка: ' + err,
                 });
         });
 };
@@ -90,7 +90,7 @@ module.exports.deleteArticle = function (req, res) {
             }
         }, (err) => {
             res.status(404).json({
-                status: 'При удалении записи произошла ошибка: ' + err
+                status: 'При удалении записи произошла ошибка: ' + err,
             });
         });
 }
