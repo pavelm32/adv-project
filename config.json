@@ -5,5 +5,9 @@
     "name": "api",
     "user": "",
     "password": ""
+  },
+  "server": {
+    "host": "localhost",
+    "port": "3000"
   }
 }
