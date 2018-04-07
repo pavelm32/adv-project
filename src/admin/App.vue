@@ -1,14 +1,26 @@
 <template lang="pug">
-  app-title
+    .admin
+        header.header
+          admin-header
+        nav.tabs
+            tabs
+        main.content
+            router-view
+
 </template>
 
 <script>
-export default {
-  components: {
-    appTitle: require('./components/title').default
-  }
-}
+    import header from './components/header'
+    import tabs from './components/tabs'
+    import about from './components/about'
+
+    export default {
+        components: {
+            adminHeader: header, tabs, about
+        }
+    }
 </script>
 
-<style>
+<style scoped lang="scss">
+
 </style>

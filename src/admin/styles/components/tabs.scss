@@ -1,0 +1,13 @@
+.list {
+    display: flex;
+    background-color: $beige;
+}
+
+.item {
+    border-right: 2px solid #fff;
+}
+
+.link {
+    padding: 20px;
+    display: block;
+}

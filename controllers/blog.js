@@ -1,4 +1,4 @@
-const config = require('../config');
+const config = require('../config/config');
 const http = require('axios');
 
 module.exports.blog = function (req, res) {

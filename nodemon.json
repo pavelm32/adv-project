@@ -1,6 +1,6 @@
 {
   "script": "server.js",
-  "watch": ["server.js","routes","controllers","src/templates","api"],
+  "watch": ["server.js","routes","controllers","src/templates","api","config"],
   "ignore": ["node_modules", "src"],
   "env": {
     "NODE_ENV": "development"

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const config = require('../../config');
+const config = require('./config');
 
 mongoose.Promise = global.Promise;
 
@@ -36,4 +36,5 @@ process.on('SIGINT', function() {
     });
 });
 
-require('./blog');
+require('../api/models/blog');
+require('../models/user');
